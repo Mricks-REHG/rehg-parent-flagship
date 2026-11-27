@@ -150,13 +150,25 @@
       imgSrc: "72audit.jpeg",
       imgFallbacks: ["assets/72audit.jpeg", "72audit.jpg", "assets/72audit.jpg", "plate-03-back-office.jpg"],
       paragraphs: [
-        "A traditional CPA P&L is a post-mortem—an autopsy delivered weeks after the cash has already walked out the door. The 72-Hour Audit is real-time operational triage built to catch profit leakage while it is actively happening on the floor, at the bar, and in the back of house.",
-        "We go deep into every layer of your business—COGS, bar pour variance, labor deployment, vendor pricing, cash handling, and floor execution—without high-level theory or academic checklists. Every finding comes with concrete margin controls and playbooks written for immediate execution by your team."
+        "A CPA P&L is an autopsy after the money is gone; our 72-Hour Audit is real-time intervention. We dissect every angle of your operations—COGS, labor, pour controls, and floor execution—and hand your team practical margin controls built to run immediately, not textbook theory."
       ],
       guaranteePrefix: "Written 4x Year-One ROI Guarantee:",
-      guaranteeBody: " If our audit does not uncover at least 4x in verifiable year-one savings—or you receive your money back.",
-      listIntro: "",
-      bullets: [],
+      guaranteeBody: " Backed by our written money-back guarantee to identify at least 4x ROI in year-one savings—or your money back.",
+      listIntro: "Immediate 72-hour forensic scope across your floor:",
+      bullets: [
+        {
+          lead: "Actual-vs.-Theoretical COGS & Pour Controls:",
+          body: " Exposing un-rung pours, recipe drift, and receiving-dock vendor overcharges while they are happening"
+        },
+        {
+          lead: "Labor, Cash & Override Integrity:",
+          body: " Auditing shift deployment, POS comps/voids, and blind drop-slot separation of duties"
+        },
+        {
+          lead: "Immediate Floor Playbooks:",
+          body: " Concrete margin controls locked into CARBON™ | SOVEREIGN PORTAL and CARBON™ | LOSS"
+        }
+      ],
       ctaLabel: "Book Your 72-Hour Audit Now",
       bookingTopic: "Book Your 72-Hour Operational & Margin Audit"
     },
@@ -170,8 +182,8 @@
         "Most secret shoppers fill out a generic checklist on whether the server smiled—then hand you a feel-good report that changes nothing. Our Secret Shopper Audit is a surgical field test designed to expose what actually happens when your team operates without watching eyes.",
         "We test every touchpoint from arrival to closeout: greeting speed, menu/upsell execution, bar pour and ticket accuracy, table pacing, comp/void discipline, and how your staff handles friction in real time. Instead of vague ratings, you get an unfiltered breakdown of where revenue is slipping and practical floor corrections your managers can put into action immediately."
       ],
-      guaranteePrefix: "",
-      guaranteeBody: "",
+      guaranteePrefix: "Timestamped POS Receipt Verification:",
+      guaranteeBody: " Every unannounced bar, dining, and VIP observation is reconciled directly against live POS check timestamps.",
       listIntro: "",
       bullets: [],
       ctaLabel: "Book Your Secret Shopper Now",
@@ -182,12 +194,12 @@
       kicker: "EXPERIENCE 03 • TOP-DOWN FLOOR LEADERSHIP",
       title: "Manager & Staff Training",
       imgSrc: "stafftraining.jpeg",
-      imgFallbacks: ["assets/stafftraining.jpeg", "stafftraining.jpg", "assets/stafftraining.jpg", "plate-05-executive-floor.jpg"],
+      imgFallbacks: ["assets/stafftraining.jpeg", "stafftraining.jpg", "assets/stafftraining.jpg", "google-meet.jpg"],
       paragraphs: [
         "A venue only performs as well as the leadership foundation holding it together from the top down. Our Manager & Staff Training strengthens the GM's ability to lead decisively while giving the entire floor—from GM down to every server and bartender—a clear operating foundation to lead and execute from. Delivered via interactive online Google Meet sessions or on-premises—the choice is yours."
       ],
-      guaranteePrefix: "",
-      guaranteeBody: "",
+      guaranteePrefix: "Flexible Delivery Format:",
+      guaranteeBody: " Interactive live Google Meet sessions or hands-on on-premises floor calibration—built around your schedule.",
       listIntro: "We align every tier around real floor habits:",
       bullets: [
         {
@@ -223,8 +235,8 @@
       paragraphs: [
         "A typical marketing agency measures success in clicks, impressions, and Meta geo-fencing radiuses—leaving the C-Suite blind to whether ad spend actually produces profitable covers. Feeder-City Demand & Revenue Architecture is built around C-Suite capital discipline: auditing your digital footprint, cutting bloated spend across fragmented promotion and reservation vendors, enforcing true Customer Acquisition Cost (CAC) governance, and driving high-yield feeder traffic directly into your highest-margin seatings and VIP inventory."
       ],
-      guaranteePrefix: "",
-      guaranteeBody: "",
+      guaranteePrefix: "C-Suite Capital & CAC Discipline:",
+      guaranteeBody: " Every marketing dollar is governed against net realized table and VIP margin—never vanity clicks.",
       listIntro: "This goes far beyond running ads, drawing a digital fence around a map, or paying multiple disconnected vendors:",
       bullets: [
         {

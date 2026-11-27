@@ -1018,11 +1018,12 @@ textarea {
 
 .advisory-photo-stage {
   width: 100%;
-  height: 290px;
+  flex: 1 1 auto;
+  min-height: 310px;
   overflow: hidden;
   background: var(--bg-warm-stone);
   border-bottom: 1px solid var(--border-hairline);
-  flex-shrink: 0;
+  display: flex;
 }
 
 .advisory-aligned-img {
@@ -1033,12 +1034,12 @@ textarea {
 }
 
 .advisory-photo-caption {
-  padding: 18px 22px 22px;
+  padding: 18px 22px 20px;
   background: var(--bg-white);
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  flex: 1 1 auto;
+  gap: 5px;
+  flex: 0 0 auto;
 }
 
 .advisory-aligned-card {
@@ -1788,7 +1789,7 @@ textarea {
 
 
 /* ==========================================================================
-   V5 ADDITIONS: 4-EXPERIENCE C-SUITE GOVERNANCE CAROUSEL & DEDICATED MODAL
+   V6 REFINEMENTS: C-SUITE GOVERNANCE CAROUSEL (NO HEAD CLIPPING) & TIGHT MODAL (ZERO WHITE SPACE)
    ========================================================================== */
 .governance-carousel-shell {
   border-color: var(--border-gold);
@@ -1796,9 +1797,9 @@ textarea {
 }
 
 .governance-slide-card {
-  flex: 0 0 calc((100% - 24px) / 1.45);
-  min-width: 320px;
-  max-width: 680px;
+  flex: 0 0 calc((100% - 20px) / 2);
+  min-width: 310px;
+  max-width: 580px;
   scroll-snap-align: start;
   border-top: 3px solid var(--gold-primary);
   overflow: hidden;
@@ -1810,7 +1811,8 @@ textarea {
 .governance-photo-well {
   position: relative;
   width: 100%;
-  height: 310px;
+  aspect-ratio: 4 / 3;
+  height: auto;
   overflow: hidden;
   background: var(--ink-primary);
   border-bottom: 1px solid var(--border-gold);
@@ -1820,14 +1822,14 @@ textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
   user-select: none;
   -webkit-user-drag: none;
   transition: transform 0.28s ease;
 }
 
 .governance-slide-card:hover .governance-photo-img {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 .governance-click-pill {
@@ -1847,7 +1849,7 @@ textarea {
 }
 
 .governance-card-body {
-  padding: 24px 26px 22px;
+  padding: 20px 24px 22px;
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
@@ -1855,7 +1857,7 @@ textarea {
 
 .governance-card-footer {
   margin-top: auto;
-  padding-top: 16px;
+  padding-top: 14px;
   border-top: 1px solid var(--border-hairline);
   display: flex;
   flex-wrap: wrap;
@@ -1871,50 +1873,68 @@ textarea {
   font-weight: 800;
 }
 
-/* Governance Experience Popout Modal */
+/* Governance Experience Popout Modal — Zero Dead White Space & Full-Screen Fit */
 .modal-dialog-wide {
-  max-width: 920px;
+  max-width: 1000px;
+}
+
+#governance-experience-modal .modal-header {
+  padding: 14px 22px;
+}
+
+#governance-experience-modal .modal-title {
+  font-size: 1.55rem;
+}
+
+#governance-experience-modal .modal-body {
+  padding: 18px 22px 20px;
 }
 
 .gov-modal-body {
   display: grid;
-  grid-template-columns: 0.94fr 1.06fr;
-  gap: 26px;
-  align-items: start;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 22px;
+  align-items: stretch;
 }
 
 .gov-modal-photo-col {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  justify-content: space-between;
+  gap: 12px;
+  height: 100%;
 }
 
 .gov-modal-photo-frame {
   width: 100%;
+  flex: 1 1 auto;
+  min-height: 290px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 2px solid var(--border-gold);
   background: var(--ink-primary);
   box-shadow: var(--shadow-soft);
+  display: flex;
 }
 
 .gov-modal-img {
   width: 100%;
-  max-height: 330px;
-  height: auto;
+  height: 100%;
+  max-height: none;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
   display: block;
 }
 
 .gov-guarantee-callout {
-  padding: 14px 16px;
+  flex: 0 0 auto;
+  padding: 12px 15px;
   border-radius: var(--radius-md);
   background: linear-gradient(180deg, rgba(230, 195, 92, 0.16) 0%, rgba(212, 175, 55, 0.08) 100%);
   border: 1px solid var(--gold-primary);
   border-left: 4px solid var(--gold-deep);
-  font-size: 0.865rem;
-  line-height: 1.55;
+  font-size: 0.825rem;
+  line-height: 1.48;
   color: var(--ink-primary);
 }
 
@@ -1922,38 +1942,65 @@ textarea {
   color: var(--gold-deep);
 }
 
+.gov-modal-details-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .gov-modal-paragraphs {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 14px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .gov-modal-paragraphs p {
   margin: 0;
-  font-size: 0.9375rem;
-  line-height: 1.66;
+  font-size: 0.895rem;
+  line-height: 1.54;
   color: var(--ink-secondary);
 }
 
 .gov-list-intro {
-  margin: 4px 0 10px;
-  font-size: 0.9rem;
+  margin: 2px 0 8px;
+  font-size: 0.875rem;
   font-weight: 800;
   color: var(--ink-primary);
 }
 
 .gov-modal-bullets {
-  margin-bottom: 20px;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.gov-modal-bullets li {
+  font-size: 0.84rem;
+  line-height: 1.44;
 }
 
 .gov-modal-bullets li strong {
   color: var(--ink-primary);
 }
 
+#governance-experience-modal .module-modal-actions {
+  margin-top: auto;
+  gap: 9px;
+}
+
+#governance-experience-modal .module-modal-actions .btn-gold {
+  padding: 11px 18px;
+}
+
 @media (max-width: 900px) {
   .gov-modal-body {
     grid-template-columns: 1fr;
+  }
+
+  .gov-modal-photo-frame {
+    min-height: 250px;
+    aspect-ratio: 4 / 3;
   }
 
   .governance-slide-card {
@@ -1967,15 +2014,12 @@ textarea {
     min-width: 265px;
   }
 
-  .governance-photo-well {
-    height: 225px;
-  }
-
   .governance-card-body {
     padding: 18px;
   }
 
-  .gov-modal-img {
-    max-height: 240px;
+  .advisory-photo-stage {
+    min-height: 235px;
+    aspect-ratio: 4 / 3;
   }
 }
