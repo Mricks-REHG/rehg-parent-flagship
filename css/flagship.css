@@ -1785,3 +1785,197 @@ textarea {
     padding: 16px;
   }
 }
+
+
+/* ==========================================================================
+   V5 ADDITIONS: 4-EXPERIENCE C-SUITE GOVERNANCE CAROUSEL & DEDICATED MODAL
+   ========================================================================== */
+.governance-carousel-shell {
+  border-color: var(--border-gold);
+  background: var(--bg-white);
+}
+
+.governance-slide-card {
+  flex: 0 0 calc((100% - 24px) / 1.45);
+  min-width: 320px;
+  max-width: 680px;
+  scroll-snap-align: start;
+  border-top: 3px solid var(--gold-primary);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.governance-photo-well {
+  position: relative;
+  width: 100%;
+  height: 310px;
+  overflow: hidden;
+  background: var(--ink-primary);
+  border-bottom: 1px solid var(--border-gold);
+}
+
+.governance-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform 0.28s ease;
+}
+
+.governance-slide-card:hover .governance-photo-img {
+  transform: scale(1.04);
+}
+
+.governance-click-pill {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid var(--gold-primary);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.35);
+  pointer-events: none;
+}
+
+.governance-card-body {
+  padding: 24px 26px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.governance-card-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-hairline);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.governance-guarantee-tag {
+  color: var(--gold-deep);
+  font-weight: 800;
+}
+
+/* Governance Experience Popout Modal */
+.modal-dialog-wide {
+  max-width: 920px;
+}
+
+.gov-modal-body {
+  display: grid;
+  grid-template-columns: 0.94fr 1.06fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.gov-modal-photo-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gov-modal-photo-frame {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid var(--border-gold);
+  background: var(--ink-primary);
+  box-shadow: var(--shadow-soft);
+}
+
+.gov-modal-img {
+  width: 100%;
+  max-height: 330px;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.gov-guarantee-callout {
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, rgba(230, 195, 92, 0.16) 0%, rgba(212, 175, 55, 0.08) 100%);
+  border: 1px solid var(--gold-primary);
+  border-left: 4px solid var(--gold-deep);
+  font-size: 0.865rem;
+  line-height: 1.55;
+  color: var(--ink-primary);
+}
+
+.gov-guarantee-callout strong {
+  color: var(--gold-deep);
+}
+
+.gov-modal-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.gov-modal-paragraphs p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.66;
+  color: var(--ink-secondary);
+}
+
+.gov-list-intro {
+  margin: 4px 0 10px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--ink-primary);
+}
+
+.gov-modal-bullets {
+  margin-bottom: 20px;
+}
+
+.gov-modal-bullets li strong {
+  color: var(--ink-primary);
+}
+
+@media (max-width: 900px) {
+  .gov-modal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .governance-slide-card {
+    flex: 0 0 84%;
+  }
+}
+
+@media (max-width: 640px) {
+  .governance-slide-card {
+    flex: 0 0 88%;
+    min-width: 265px;
+  }
+
+  .governance-photo-well {
+    height: 225px;
+  }
+
+  .governance-card-body {
+    padding: 18px;
+  }
+
+  .gov-modal-img {
+    max-height: 240px;
+  }
+}

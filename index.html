@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/flagship.css?v=4" />
+  <link rel="stylesheet" href="css/flagship.css?v=5" />
 </head>
 <body>
   <!-- 1. EXECUTIVE COMMAND HEADER (UNFRAMED STANDALONE GOLD CREST + RESPONSIVE MOBILE DRAWER) -->
@@ -182,46 +182,169 @@
           </figcaption>
         </figure>
 
-        <!-- BOTTOM BLOCK — 4-PILLAR C-SUITE GOVERNANCE GRID BELOW THE SKYLINE IMAGE -->
+        <!-- BOTTOM BLOCK — SCROLLABLE 4-EXPERIENCE C-SUITE GOVERNANCE CAROUSEL BELOW THE SKYLINE IMAGE -->
         <div class="csuite-governance-block">
           <div class="eyebrow-tag">
             <span class="gold-dot"></span>
-            <span>OPERATOR-TO-OPERATOR C-SUITE GOVERNANCE</span>
+            <span>OPERATOR-TO-OPERATOR C-SUITE GOVERNANCE &bull; SCROLLABLE EXPERIENCE CAROUSEL</span>
           </div>
           <h3 class="csuite-sub-header">OPERATOR-TO-OPERATOR C-SUITE GOVERNANCE</h3>
 
-          <div class="csuite-4-grid">
-            <article class="exec-card csuite-pillar-card">
-              <div class="reality-stamp">01 &bull; FORENSIC AUDIT &amp; SHRINKAGE</div>
-              <h4 class="card-title">72-Hour Forensic Profitability &amp; Shrinkage Audits</h4>
-              <p class="card-copy">
-                We step onto your floor and into your numbers like an owner—reconciling actual-vs.-theoretical pour and food COGS, receiving-dock weights, POS comp/void overrides, blind cash-drop separation of duties, door counts, and VIP bottle logs. Instead of waiting 45 days for a CPA&rsquo;s post-mortem, we expose hidden variance, vendor overcharges, and silent cash or inventory bleed within 72 hours, then lock your operation inside our CARBON™ | SOVEREIGN PORTAL and CARBON™ | LOSS vault.
-              </p>
-            </article>
+          <div class="carousel-shell governance-carousel-shell">
+            <div class="carousel-toolbar">
+              <span class="carousel-counter" id="governance-carousel-counter">Experience 01 of 04</span>
+              <div class="carousel-controls">
+                <button
+                  type="button"
+                  class="carousel-arrow-btn"
+                  id="governance-prev-btn"
+                  aria-label="Previous C-Suite Governance Experience"
+                >
+                  &larr; Previous
+                </button>
+                <button
+                  type="button"
+                  class="carousel-arrow-btn"
+                  id="governance-next-btn"
+                  aria-label="Next C-Suite Governance Experience"
+                >
+                  Next &rarr;
+                </button>
+              </div>
+            </div>
 
-            <article class="exec-card csuite-pillar-card">
-              <div class="reality-stamp">02 &bull; UNANNOUNCED FLOOR VERIFICATION</div>
-              <h4 class="card-title">Undercover Floor Intelligence &amp; Secret Shopper Audits</h4>
-              <p class="card-copy">
-                You never see your real floor when the staff knows ownership is in the building. Our seasoned hospitality operators enter unannounced as live guests across peak dinner, late-night bar, and VIP shifts—auditing bartender ring integrity, cash handling, ticket speed, upsell execution, security posture, and guest hospitality against timestamped POS receipts so you see the unfiltered truth of how your venue performs when your back is turned.
-              </p>
-            </article>
+            <div
+              class="carousel-viewport governance-viewport"
+              id="governance-carousel-viewport"
+              tabindex="0"
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="Operator-to-Operator C-Suite Governance Experiences"
+            >
+              <div class="carousel-track governance-track" id="governance-carousel-track">
+                <!-- 01: 72-Hour Operational & Margin Audit -->
+                <article
+                  class="exec-card governance-slide-card"
+                  data-governance-index="0"
+                  role="button"
+                  tabindex="0"
+                  aria-label="Inspect The 72-Hour Operational & Margin Audit"
+                >
+                  <div class="governance-photo-well">
+                    <img
+                      src="72audit.jpeg"
+                      alt="The 72-Hour Operational & Margin Audit"
+                      class="governance-photo-img"
+                      data-fallbacks="assets/72audit.jpeg,72audit.jpg,assets/72audit.jpg"
+                    />
+                    <span class="governance-click-pill">Click Image to Inspect &rarr;</span>
+                  </div>
+                  <div class="governance-card-body">
+                    <div class="reality-stamp">01 &bull; FORENSIC AUDIT &amp; SHRINKAGE</div>
+                    <h4 class="card-title">72-Hour Forensic Profitability &amp; Shrinkage Audits</h4>
+                    <p class="card-copy">
+                      We step onto your floor and into your numbers like an owner—reconciling actual-vs.-theoretical pour and food COGS, receiving-dock weights, POS comp/void overrides, blind cash-drop separation of duties, door counts, and VIP bottle logs. Instead of waiting 45 days for a CPA&rsquo;s post-mortem, we expose hidden variance, vendor overcharges, and silent cash or inventory bleed within 72 hours, then lock your operation inside our CARBON™ | SOVEREIGN PORTAL and CARBON™ | LOSS vault.
+                    </p>
+                    <div class="governance-card-footer">
+                      <span class="governance-guarantee-tag">Written 4x Year-One ROI Guarantee</span>
+                      <span class="slide-inspect-cue">Open Full Briefing &rarr;</span>
+                    </div>
+                  </div>
+                </article>
 
-            <article class="exec-card csuite-pillar-card">
-              <div class="reality-stamp">03 &bull; FLOOR &amp; SHIFT CALIBRATION</div>
-              <h4 class="card-title">Executive Manager &amp; Frontline Staff Calibration</h4>
-              <p class="card-copy">
-                Systems fail when managers manage from the back office and staff treat standards as optional. Speaking the language of the floor—operator to manager, bartender to bartender, chef to line—we install disciplined shift-change protocols, one-way blind drawer drops, prep and portion guardrails, and high-conversion table and VIP service choreography through live on-floor calibration and our Operational Masterclass Series.
-              </p>
-            </article>
+                <!-- 02: Undercover Secret Shopper Audit -->
+                <article
+                  class="exec-card governance-slide-card"
+                  data-governance-index="1"
+                  role="button"
+                  tabindex="0"
+                  aria-label="Inspect Undercover Secret Shopper Audit"
+                >
+                  <div class="governance-photo-well">
+                    <img
+                      src="secretshopper.jpeg"
+                      alt="Undercover Secret Shopper Audit"
+                      class="governance-photo-img"
+                      data-fallbacks="assets/secretshopper.jpeg,secretshopper.jpg,assets/secretshopper.jpg"
+                    />
+                    <span class="governance-click-pill">Click Image to Inspect &rarr;</span>
+                  </div>
+                  <div class="governance-card-body">
+                    <div class="reality-stamp">02 &bull; UNANNOUNCED FLOOR VERIFICATION</div>
+                    <h4 class="card-title">Undercover Floor Intelligence &amp; Secret Shopper Audits</h4>
+                    <p class="card-copy">
+                      You never see your real floor when the staff knows ownership is in the building. Our seasoned hospitality operators enter unannounced as live guests across peak dinner, late-night bar, and VIP shifts—auditing bartender ring integrity, cash handling, ticket speed, upsell execution, security posture, and guest hospitality against timestamped POS receipts so you see the unfiltered truth of how your venue performs when your back is turned.
+                    </p>
+                    <div class="governance-card-footer">
+                      <span class="governance-guarantee-tag">Timestamped POS Receipt Verification</span>
+                      <span class="slide-inspect-cue">Open Full Briefing &rarr;</span>
+                    </div>
+                  </div>
+                </article>
 
-            <article class="exec-card csuite-pillar-card">
-              <div class="reality-stamp">04 &bull; DIRECT DEMAND &amp; CONVERSION</div>
-              <h4 class="card-title">Feeder-City Demand &amp; Revenue Architecture</h4>
-              <p class="card-copy">
-                Protecting margin means nothing if the room isn&rsquo;t full of high-spend guests. Powered by CARBON™ | DIGITAL FOOTPRINT and CARBON™ | FEEDER, we replace vanity social media agencies with direct revenue infrastructure—engineering regional B2C feeder-city capture campaigns, high-converting VIP table and reservation funnels, and executive nightlife cinema that pull affluent regional traffic straight from surrounding metro corridors onto your floor.
-              </p>
-            </article>
+                <!-- 03: Manager & Staff Training -->
+                <article
+                  class="exec-card governance-slide-card"
+                  data-governance-index="2"
+                  role="button"
+                  tabindex="0"
+                  aria-label="Inspect Manager & Staff Training"
+                >
+                  <div class="governance-photo-well">
+                    <img
+                      src="stafftraining.jpeg"
+                      alt="Manager & Staff Training"
+                      class="governance-photo-img"
+                      data-fallbacks="assets/stafftraining.jpeg,stafftraining.jpg,assets/stafftraining.jpg"
+                    />
+                    <span class="governance-click-pill">Click Image to Inspect &rarr;</span>
+                  </div>
+                  <div class="governance-card-body">
+                    <div class="reality-stamp">03 &bull; FLOOR &amp; SHIFT CALIBRATION</div>
+                    <h4 class="card-title">Executive Manager &amp; Frontline Staff Calibration</h4>
+                    <p class="card-copy">
+                      Systems fail when managers manage from the back office and staff treat standards as optional. Speaking the language of the floor—operator to manager, bartender to bartender, chef to line—we install disciplined shift-change protocols, one-way blind drawer drops, prep and portion guardrails, and high-conversion table and VIP service choreography through live on-floor calibration and our Operational Masterclass Series.
+                    </p>
+                    <div class="governance-card-footer">
+                      <span class="governance-guarantee-tag">Google Meet Online or On-Premises</span>
+                      <span class="slide-inspect-cue">Open Full Briefing &rarr;</span>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- 04: Feeder-City Demand & Revenue Architecture -->
+                <article
+                  class="exec-card governance-slide-card"
+                  data-governance-index="3"
+                  role="button"
+                  tabindex="0"
+                  aria-label="Inspect Feeder-City Demand & Revenue Architecture"
+                >
+                  <div class="governance-photo-well">
+                    <img
+                      src="feedercity.jpeg"
+                      alt="Feeder-City Demand & Revenue Architecture"
+                      class="governance-photo-img"
+                      data-fallbacks="assets/feedercity.jpeg,feedercity.jpg,assets/feedercity.jpg"
+                    />
+                    <span class="governance-click-pill">Click Image to Inspect &rarr;</span>
+                  </div>
+                  <div class="governance-card-body">
+                    <div class="reality-stamp">04 &bull; DIRECT DEMAND &amp; CONVERSION</div>
+                    <h4 class="card-title">Feeder-City Demand &amp; Revenue Architecture</h4>
+                    <p class="card-copy">
+                      Protecting margin means nothing if the room isn&rsquo;t full of high-spend guests. Powered by CARBON™ | DIGITAL FOOTPRINT and CARBON™ | FEEDER, we replace vanity social media agencies with direct revenue infrastructure—engineering regional B2C feeder-city capture campaigns, high-converting VIP table and reservation funnels, and executive nightlife cinema that pull affluent regional traffic straight from surrounding metro corridors onto your floor.
+                    </p>
+                    <div class="governance-card-footer">
+                      <span class="governance-guarantee-tag">C-Suite CAC &amp; ROI Governance</span>
+                      <span class="slide-inspect-cue">Open Full Briefing &rarr;</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="carousel-dots" id="governance-carousel-dots" role="tablist" aria-label="C-Suite Governance Slides"></div>
           </div>
 
           <div class="closing-callout-bar">
@@ -484,9 +607,10 @@
           <div class="advisory-photo-panel">
             <div class="advisory-photo-stage">
               <img
-                src="team-google-meet.jpg"
+                src="assets/team-google-meet.jpg"
                 alt="1-on-1 Trained Advisors and Operations Team Session"
                 class="advisory-aligned-img"
+                data-fallbacks="team-google-meet.jpg,team-google-meet.jpeg,assets/team-google-meet.jpeg,team-google-meet.png,assets/team-google-meet.png,team-google-meet (1).jpg,stafftraining.jpeg,plate-05-executive-floor.jpg"
               />
             </div>
             <div class="advisory-photo-caption">
@@ -670,6 +794,67 @@
     </div>
   </div>
 
+  <!-- 9C. C-SUITE GOVERNANCE EXPERIENCE POPOUT MODAL (HIDDEN BY DEFAULT UNTIL TRIGGERED) -->
+  <div
+    class="modal-backdrop"
+    id="governance-experience-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="gov-modal-title"
+    style="display: none;"
+  >
+    <div class="modal-dialog modal-dialog-wide" tabindex="-1">
+      <div class="modal-header">
+        <div class="modal-header-meta">
+          <span class="modal-kicker" id="gov-modal-kicker">OPERATOR-TO-OPERATOR C-SUITE GOVERNANCE</span>
+          <h2 class="modal-title" id="gov-modal-title">C-Suite Governance Experience</h2>
+        </div>
+        <button
+          type="button"
+          class="modal-close-btn"
+          id="close-gov-modal-btn"
+          aria-label="Close C-Suite Governance Modal"
+        >
+          &times;
+        </button>
+      </div>
+
+      <div class="modal-body gov-modal-body">
+        <div class="gov-modal-photo-col">
+          <div class="gov-modal-photo-frame">
+            <img
+              src="72audit.jpeg"
+              alt=""
+              id="gov-modal-img"
+              class="gov-modal-img"
+            />
+          </div>
+          <div class="gov-guarantee-callout" id="gov-modal-guarantee" style="display: none;"></div>
+        </div>
+
+        <div class="gov-modal-details-col">
+          <div class="gov-modal-paragraphs" id="gov-modal-paragraphs"></div>
+          <p class="gov-list-intro" id="gov-modal-list-intro" style="display: none;"></p>
+          <ul class="module-points gov-modal-bullets" id="gov-modal-bullets" style="display: none;"></ul>
+
+          <div class="module-modal-actions">
+            <button type="button" class="btn btn-gold" id="gov-modal-cta-btn">
+              Book Your 72-Hour Audit Now
+            </button>
+            <div class="module-cycle-group">
+              <button type="button" class="btn btn-outline btn-sm" id="gov-prev-btn">
+                &larr; Previous Experience
+              </button>
+              <button type="button" class="btn btn-outline btn-sm" id="gov-next-btn">
+                Next Experience &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- 9B. PRINCIPAL CONVERSATION POPOUT MODAL (HIDDEN BY DEFAULT UNTIL TRIGGERED) -->
   <div
     class="modal-backdrop"
@@ -755,6 +940,6 @@
     </div>
   </div>
 
-  <script src="js/flagship.js?v=4"></script>
+  <script src="js/flagship.js?v=5"></script>
 </body>
 </html>

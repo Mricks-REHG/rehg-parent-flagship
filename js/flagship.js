@@ -142,6 +142,113 @@
     }
   };
 
+  const GOVERNANCE_EXPERIENCES = [
+    {
+      id: "audit-72hr",
+      kicker: "EXPERIENCE 01 • REAL-TIME OPERATIONAL TRIAGE",
+      title: "The 72-Hour Operational & Margin Audit",
+      imgSrc: "72audit.jpeg",
+      imgFallbacks: ["assets/72audit.jpeg", "72audit.jpg", "assets/72audit.jpg", "plate-03-back-office.jpg"],
+      paragraphs: [
+        "A traditional CPA P&L is a post-mortem—an autopsy delivered weeks after the cash has already walked out the door. The 72-Hour Audit is real-time operational triage built to catch profit leakage while it is actively happening on the floor, at the bar, and in the back of house.",
+        "We go deep into every layer of your business—COGS, bar pour variance, labor deployment, vendor pricing, cash handling, and floor execution—without high-level theory or academic checklists. Every finding comes with concrete margin controls and playbooks written for immediate execution by your team."
+      ],
+      guaranteePrefix: "Written 4x Year-One ROI Guarantee:",
+      guaranteeBody: " If our audit does not uncover at least 4x in verifiable year-one savings—or you receive your money back.",
+      listIntro: "",
+      bullets: [],
+      ctaLabel: "Book Your 72-Hour Audit Now",
+      bookingTopic: "Book Your 72-Hour Operational & Margin Audit"
+    },
+    {
+      id: "secret-shopper",
+      kicker: "EXPERIENCE 02 • SURGICAL FIELD VERIFICATION",
+      title: "Undercover Secret Shopper Audit",
+      imgSrc: "secretshopper.jpeg",
+      imgFallbacks: ["assets/secretshopper.jpeg", "secretshopper.jpg", "assets/secretshopper.jpg", "plate-01-bar-well.jpg"],
+      paragraphs: [
+        "Most secret shoppers fill out a generic checklist on whether the server smiled—then hand you a feel-good report that changes nothing. Our Secret Shopper Audit is a surgical field test designed to expose what actually happens when your team operates without watching eyes.",
+        "We test every touchpoint from arrival to closeout: greeting speed, menu/upsell execution, bar pour and ticket accuracy, table pacing, comp/void discipline, and how your staff handles friction in real time. Instead of vague ratings, you get an unfiltered breakdown of where revenue is slipping and practical floor corrections your managers can put into action immediately."
+      ],
+      guaranteePrefix: "",
+      guaranteeBody: "",
+      listIntro: "",
+      bullets: [],
+      ctaLabel: "Book Your Secret Shopper Now",
+      bookingTopic: "Book Your Undercover Secret Shopper Audit"
+    },
+    {
+      id: "staff-training",
+      kicker: "EXPERIENCE 03 • TOP-DOWN FLOOR LEADERSHIP",
+      title: "Manager & Staff Training",
+      imgSrc: "stafftraining.jpeg",
+      imgFallbacks: ["assets/stafftraining.jpeg", "stafftraining.jpg", "assets/stafftraining.jpg", "plate-05-executive-floor.jpg"],
+      paragraphs: [
+        "A venue only performs as well as the leadership foundation holding it together from the top down. Our Manager & Staff Training strengthens the GM's ability to lead decisively while giving the entire floor—from GM down to every server and bartender—a clear operating foundation to lead and execute from. Delivered via interactive online Google Meet sessions or on-premises—the choice is yours."
+      ],
+      guaranteePrefix: "",
+      guaranteeBody: "",
+      listIntro: "We align every tier around real floor habits:",
+      bullets: [
+        {
+          lead: "GM Leadership & Accountability:",
+          body: " Reinforcing how GMs set standards, coach in real time, and hold shift leads to clear numbers"
+        },
+        {
+          lead: "The Art of the Upsell:",
+          body: " Practical, natural check-building from servers and bartenders without pushy scripts"
+        },
+        {
+          lead: "People & Attitude Alignment:",
+          body: " Managing morale, resetting attitude before rush, and keeping energy high on the floor"
+        },
+        {
+          lead: "Scheduling & Communication:",
+          body: " Tight shift planning, clear pre-shift huddles, and zero handoff confusion between shifts"
+        },
+        {
+          lead: "Incident Reporting:",
+          body: " Fast, factual documentation and escalation when floor, guest, or safety issues hit"
+        }
+      ],
+      ctaLabel: "Schedule Your Staff Training Session",
+      bookingTopic: "Schedule Your Manager & Staff Training Session"
+    },
+    {
+      id: "feeder-city",
+      kicker: "EXPERIENCE 04 • C-SUITE CAPITAL & DEMAND DISCIPLINE",
+      title: "Feeder-City Demand & Revenue Architecture",
+      imgSrc: "feedercity.jpeg",
+      imgFallbacks: ["assets/feedercity.jpeg", "feedercity.jpg", "assets/feedercity.jpg", "skyline.jpeg"],
+      paragraphs: [
+        "A typical marketing agency measures success in clicks, impressions, and Meta geo-fencing radiuses—leaving the C-Suite blind to whether ad spend actually produces profitable covers. Feeder-City Demand & Revenue Architecture is built around C-Suite capital discipline: auditing your digital footprint, cutting bloated spend across fragmented promotion and reservation vendors, enforcing true Customer Acquisition Cost (CAC) governance, and driving high-yield feeder traffic directly into your highest-margin seatings and VIP inventory."
+      ],
+      guaranteePrefix: "",
+      guaranteeBody: "",
+      listIntro: "This goes far beyond running ads, drawing a digital fence around a map, or paying multiple disconnected vendors:",
+      bullets: [
+        {
+          lead: "Digital Footprint & Conversion Audit:",
+          body: " Evaluating your web presence, booking flow, and local search/visibility to fix friction points where high-intent guests drop off before reserving"
+        },
+        {
+          lead: "Multi-Vendor Consolidation & Cost Cutting:",
+          body: " Eliminating redundant retainers, overlapping promotion agencies, and third-party reservation/booking fees so overhead drops while control tightens"
+        },
+        {
+          lead: "True CAC & Ad-Dollar ROI Governance:",
+          body: " Measuring real acquisition cost against net realized margin—not vanity clicks or unverified leads—so every ad dollar is tied to accountable return"
+        },
+        {
+          lead: "Feeder-Market Targeting & Floor Execution:",
+          body: " Pulling high-intent regional and traveling guests from surrounding demand hubs and aligning offers with floor readiness so demand turns into realized revenue"
+        }
+      ],
+      ctaLabel: "Book Your Feeder-City Conversation Now",
+      bookingTopic: "Book Your Feeder-City Demand & Revenue Architecture Conversation"
+    }
+  ];
+
   const PRINCIPAL_CONTACT = {
     name: "Michael Ricks — Founder & CEO",
     email: "Mricks@rehgexec.com",
@@ -151,6 +258,7 @@
   const state = {
     activeModuleIndex: 0,
     activeRealityIndex: 0,
+    activeGovernanceIndex: 0,
     lastFocusedEl: null,
     activeModalId: null
   };
@@ -160,6 +268,27 @@
   function cacheDom() {
     dom.menuToggle = document.getElementById("mobile-menu-toggle");
     dom.menuDrawer = document.getElementById("mobile-nav-drawer");
+
+    dom.govViewport = document.getElementById("governance-carousel-viewport");
+    dom.govTrack = document.getElementById("governance-carousel-track");
+    dom.govDots = document.getElementById("governance-carousel-dots");
+    dom.govCounter = document.getElementById("governance-carousel-counter");
+    dom.govPrevCarouselBtn = document.getElementById("governance-prev-btn");
+    dom.govNextCarouselBtn = document.getElementById("governance-next-btn");
+
+    dom.govModal = document.getElementById("governance-experience-modal");
+    dom.govModalDialog = dom.govModal ? dom.govModal.querySelector(".modal-dialog") : null;
+    dom.closeGovBtn = document.getElementById("close-gov-modal-btn");
+    dom.govModalKicker = document.getElementById("gov-modal-kicker");
+    dom.govModalTitle = document.getElementById("gov-modal-title");
+    dom.govModalImg = document.getElementById("gov-modal-img");
+    dom.govModalGuarantee = document.getElementById("gov-modal-guarantee");
+    dom.govModalParagraphs = document.getElementById("gov-modal-paragraphs");
+    dom.govModalListIntro = document.getElementById("gov-modal-list-intro");
+    dom.govModalBullets = document.getElementById("gov-modal-bullets");
+    dom.govModalCtaBtn = document.getElementById("gov-modal-cta-btn");
+    dom.govPrevModalBtn = document.getElementById("gov-prev-btn");
+    dom.govNextModalBtn = document.getElementById("gov-next-btn");
 
     dom.realityViewport = document.getElementById("reality-carousel-viewport");
     dom.realityTrack = document.getElementById("reality-carousel-track");
@@ -365,6 +494,74 @@
   }
 
   let suiteCarouselApi = null;
+  let governanceCarouselApi = null;
+
+  function attachMultiFallback(imgEl, fallbackList) {
+    if (!imgEl || !fallbackList || !fallbackList.length) return;
+    let attempt = 0;
+    imgEl.onerror = function () {
+      if (attempt < fallbackList.length) {
+        const nextSrc = fallbackList[attempt];
+        attempt += 1;
+        imgEl.src = nextSrc;
+      } else {
+        imgEl.onerror = null;
+      }
+    };
+  }
+
+  function initImageFallbacks() {
+    const imgs = document.querySelectorAll("img[data-fallbacks]");
+    imgs.forEach(function (imgEl) {
+      const raw = imgEl.getAttribute("data-fallbacks") || "";
+      const list = raw
+        .split(",")
+        .map(function (s) { return s.trim(); })
+        .filter(Boolean);
+      attachMultiFallback(imgEl, list);
+    });
+  }
+
+  function initGovernanceCarousel() {
+    if (!dom.govViewport || !dom.govTrack) return;
+
+    const cards = dom.govTrack.querySelectorAll(".governance-slide-card");
+    cards.forEach(function (card) {
+      function handleOpen() {
+        if (dom.govViewport && dom.govViewport.dataset.justDragged === "true") {
+          return;
+        }
+        const idx = parseInt(card.getAttribute("data-governance-index") || "0", 10);
+        openGovernanceModal(isNaN(idx) ? 0 : idx, card);
+      }
+      card.addEventListener("click", handleOpen);
+      card.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleOpen();
+        }
+      });
+    });
+
+    governanceCarouselApi = attachCarouselBehavior({
+      viewport: dom.govViewport,
+      track: dom.govTrack,
+      dotsContainer: dom.govDots,
+      counterEl: dom.govCounter,
+      prevBtn: dom.govPrevCarouselBtn,
+      nextBtn: dom.govNextCarouselBtn,
+      total: GOVERNANCE_EXPERIENCES.length,
+      getLabel: function (i) {
+        return "Experience 0" + (i + 1) + " of 04 • " + GOVERNANCE_EXPERIENCES[i].title;
+      },
+      getIndex: function () {
+        return state.activeGovernanceIndex;
+      },
+      setIndex: function (i) {
+        state.activeGovernanceIndex = i;
+      }
+    });
+  }
 
   function initRealityCarousel() {
     const momentTitles = [
@@ -494,8 +691,17 @@
     if (dom.moduleModal) {
       dom.moduleModal.style.display = "none";
     }
+    if (dom.govModal) {
+      dom.govModal.style.display = "none";
+    }
+    if (dom.govModal) {
+      dom.govModal.style.display = "none";
+    }
     if (dom.principalModal) {
       dom.principalModal.style.display = "none";
+    }
+    if (dom.govModal) {
+      dom.govModal.style.display = "none";
     }
     state.activeModalId = null;
     document.body.classList.remove("modal-open");
@@ -572,6 +778,9 @@
     if (dom.principalModal) {
       dom.principalModal.style.display = "none";
     }
+    if (dom.govModal) {
+      dom.govModal.style.display = "none";
+    }
 
     populateModuleModal(index);
     dom.moduleModal.style.display = "flex";
@@ -614,6 +823,110 @@
     openModuleModal(foundIdx >= 0 ? foundIdx : 0, triggerEl);
   }
 
+  function populateGovernanceModal(index) {
+    const total = GOVERNANCE_EXPERIENCES.length;
+    const idx = ((index % total) + total) % total;
+    const exp = GOVERNANCE_EXPERIENCES[idx];
+    state.activeGovernanceIndex = idx;
+
+    if (dom.govModalKicker) {
+      dom.govModalKicker.textContent = exp.kicker;
+    }
+    if (dom.govModalTitle) {
+      dom.govModalTitle.textContent = exp.title;
+    }
+    if (dom.govModalImg) {
+      dom.govModalImg.onerror = null;
+      dom.govModalImg.src = exp.imgSrc;
+      dom.govModalImg.alt = exp.title;
+      attachMultiFallback(dom.govModalImg, exp.imgFallbacks || []);
+    }
+
+    if (dom.govModalGuarantee) {
+      if (exp.guaranteePrefix || exp.guaranteeBody) {
+        dom.govModalGuarantee.style.display = "block";
+        dom.govModalGuarantee.innerHTML = "";
+        const strongEl = document.createElement("strong");
+        strongEl.textContent = exp.guaranteePrefix;
+        dom.govModalGuarantee.appendChild(strongEl);
+        dom.govModalGuarantee.appendChild(document.createTextNode(exp.guaranteeBody));
+      } else {
+        dom.govModalGuarantee.style.display = "none";
+        dom.govModalGuarantee.innerHTML = "";
+      }
+    }
+
+    if (dom.govModalParagraphs) {
+      dom.govModalParagraphs.innerHTML = "";
+      (exp.paragraphs || []).forEach(function (txt) {
+        const p = document.createElement("p");
+        p.textContent = txt;
+        dom.govModalParagraphs.appendChild(p);
+      });
+    }
+
+    if (dom.govModalListIntro) {
+      if (exp.listIntro) {
+        dom.govModalListIntro.style.display = "block";
+        dom.govModalListIntro.textContent = exp.listIntro;
+      } else {
+        dom.govModalListIntro.style.display = "none";
+        dom.govModalListIntro.textContent = "";
+      }
+    }
+
+    if (dom.govModalBullets) {
+      dom.govModalBullets.innerHTML = "";
+      if (exp.bullets && exp.bullets.length) {
+        dom.govModalBullets.style.display = "flex";
+        exp.bullets.forEach(function (item) {
+          const li = document.createElement("li");
+          const st = document.createElement("strong");
+          st.textContent = item.lead;
+          li.appendChild(st);
+          li.appendChild(document.createTextNode(item.body));
+          dom.govModalBullets.appendChild(li);
+        });
+      } else {
+        dom.govModalBullets.style.display = "none";
+      }
+    }
+
+    if (dom.govModalCtaBtn) {
+      dom.govModalCtaBtn.textContent = exp.ctaLabel;
+    }
+
+    if (governanceCarouselApi) {
+      governanceCarouselApi.updateUI(idx);
+    }
+  }
+
+  function openGovernanceModal(index, triggerEl) {
+    if (!dom.govModal) return;
+    if (triggerEl) {
+      state.lastFocusedEl = triggerEl;
+    } else if (!state.activeModalId) {
+      state.lastFocusedEl = document.activeElement;
+    }
+
+    if (dom.moduleModal) {
+      dom.moduleModal.style.display = "none";
+    }
+    if (dom.principalModal) {
+      dom.principalModal.style.display = "none";
+    }
+
+    populateGovernanceModal(index);
+    dom.govModal.style.display = "flex";
+    state.activeModalId = "governance-experience-modal";
+    document.body.classList.add("modal-open");
+
+    if (dom.govModalDialog) {
+      dom.govModalDialog.scrollTop = 0;
+      dom.govModalDialog.focus();
+    }
+  }
+
   function openPrincipalModal(topicLabel, triggerEl) {
     if (!dom.principalModal) return;
     if (triggerEl) {
@@ -624,6 +937,9 @@
 
     if (dom.moduleModal) {
       dom.moduleModal.style.display = "none";
+    }
+    if (dom.govModal) {
+      dom.govModal.style.display = "none";
     }
 
     if (dom.briefingTopic) {
@@ -726,6 +1042,38 @@
       dom.closeModuleBtn.addEventListener("click", hideAllModals);
     }
 
+    if (dom.closeGovBtn) {
+      dom.closeGovBtn.addEventListener("click", hideAllModals);
+    }
+
+    if (dom.govModal) {
+      dom.govModal.addEventListener("click", function (e) {
+        if (e.target === dom.govModal) {
+          hideAllModals();
+        }
+      });
+    }
+
+    if (dom.govPrevModalBtn) {
+      dom.govPrevModalBtn.addEventListener("click", function () {
+        populateGovernanceModal(state.activeGovernanceIndex - 1);
+      });
+    }
+
+    if (dom.govNextModalBtn) {
+      dom.govNextModalBtn.addEventListener("click", function () {
+        populateGovernanceModal(state.activeGovernanceIndex + 1);
+      });
+    }
+
+    if (dom.govModalCtaBtn) {
+      dom.govModalCtaBtn.addEventListener("click", function () {
+        const exp = GOVERNANCE_EXPERIENCES[state.activeGovernanceIndex];
+        const topic = exp ? exp.bookingTopic : "Operator-to-Operator C-Suite Governance";
+        openPrincipalModal(topic, dom.govModalCtaBtn);
+      });
+    }
+
     if (dom.closePrincipalBtn) {
       dom.closePrincipalBtn.addEventListener("click", hideAllModals);
     }
@@ -816,7 +1164,9 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     cacheDom();
+    initImageFallbacks();
     initMobileMenu();
+    initGovernanceCarousel();
     initRealityCarousel();
     renderCarbonSuiteCarousel();
     initModalsAndForms();
