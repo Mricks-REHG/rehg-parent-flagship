@@ -55,7 +55,7 @@
       subtitle: "Traffic Generation, VIP Flow & Guest Pipeline",
       subdomain: "https://feeder.rehgexec.com",
       brief:
-        "Connects regional feeder-city demand capture and pre-shift VIP flow directly to venue capacity so high-intent guests reach your floor efficiently.",
+        "Connects regional feeder-city demand capture and pre-shift VIP flow directly to floor capacity so high-intent guests reach your floor efficiently.",
       points: [
         "Aligns guest acquisition and VIP flow with real venue capacity.",
         "Supports regional corridor capture without agency guesswork.",
@@ -93,6 +93,54 @@
       ]
     }
   ];
+
+  const SPECIAL_POPOUT_PROFILES = {
+    "carbon-pos-footprint": {
+      badgeSrc: "rehg-carbon-pos-master (1).jpeg",
+      tag: "FRONT-LINE POS & CARBON™ DIGITAL FOOTPRINT",
+      title: "CARBON™ | POS & DIGITAL FOOTPRINT",
+      subtitle: "Direct Revenue Capture + Real-Time Floor & Shift Execution",
+      subdomain: "",
+      brief:
+        "CARBON™ | DIGITAL FOOTPRINT is the digital conversion and revenue-capture architecture of RICKS EXECUTIVE HOSPITALITY GROUP™—engineered alongside CARBON™ and our front-line POS ecosystem to turn high-volume hospitality traffic into measurable, protected margin.",
+      points: [
+        "Captures high-intent guests upfront rather than handing static brochures or leaking traffic.",
+        "Enforces real-time floor, bar, and shift accountability while exposing margin leakage early.",
+        "Connects front-end conversion, live floor execution, and executive oversight in one operating system."
+      ],
+      moduleIndex: 0
+    },
+    "carbon-digital-footprint": {
+      badgeSrc: "carbon-web-vip (2).jpeg",
+      tag: "DIGITAL CONVERSION ARCHITECTURE",
+      title: "CARBON™ | DIGITAL FOOTPRINT",
+      subtitle: "Upfront Revenue Capture & Conversion Architecture",
+      subdomain: "",
+      brief:
+        "Engineered alongside CARBON™ and our front-line POS ecosystem to turn high-volume hospitality traffic into measurable, protected margin.",
+      points: [
+        "Built from real-world C-Suite hospitality command rather than generic agency templates.",
+        "Connects front-end guest conversion directly with live floor execution and oversight.",
+        "Designed for owners who refuse to bleed margin in the dark."
+      ],
+      moduleIndex: 0
+    },
+    "carbon-pos": {
+      badgeSrc: "rehg-carbon-pos-master (1).jpeg",
+      tag: "FRONT-LINE POS ECOSYSTEM",
+      title: "CARBON™ | POS",
+      subtitle: "Real-Time Floor, Bar & Shift Execution",
+      subdomain: "",
+      brief:
+        "Front-line register execution built for real floor speed, modifier clarity, and real-time operational accountability.",
+      points: [
+        "Supports fast bar, VIP, and table workflows across active shifts.",
+        "Connects floor activity to actual-vs.-theoretical margin oversight.",
+        "Engineered for independent and multi-venue operators."
+      ],
+      moduleIndex: 0
+    }
+  };
 
   const PRINCIPAL_CONTACT = {
     name: "Michael Ricks — Founder & CEO",
@@ -178,7 +226,7 @@
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 1200) {
+      if (window.innerWidth > 1240) {
         setMobileMenuOpen(false);
       }
     });
@@ -461,34 +509,29 @@
     }
   }
 
-  function populateModuleModal(index) {
-    const total = CARBON_SUITE_MODULES.length;
-    const idx = ((index % total) + total) % total;
-    const mod = CARBON_SUITE_MODULES[idx];
-    state.activeModuleIndex = idx;
-
+  function applyModalProfile(profile, idx) {
     if (dom.moduleBadgeImg) {
-      dom.moduleBadgeImg.src = mod.badgeSrc;
-      dom.moduleBadgeImg.alt = mod.title + " Emblem";
+      dom.moduleBadgeImg.src = profile.badgeSrc;
+      dom.moduleBadgeImg.alt = profile.title + " Emblem";
     }
     if (dom.moduleKicker) {
-      dom.moduleKicker.textContent = mod.tag;
+      dom.moduleKicker.textContent = profile.tag;
     }
     if (dom.moduleTitle) {
-      dom.moduleTitle.textContent = mod.title;
+      dom.moduleTitle.textContent = profile.title;
     }
     if (dom.moduleSubtitle) {
-      dom.moduleSubtitle.textContent = mod.subtitle;
+      dom.moduleSubtitle.textContent = profile.subtitle;
     }
     if (dom.moduleBrief) {
-      dom.moduleBrief.textContent = mod.brief;
+      dom.moduleBrief.textContent = profile.brief;
     }
 
     if (dom.moduleSubdomainWrap && dom.moduleSubdomainLink) {
-      if (mod.subdomain) {
+      if (profile.subdomain) {
         dom.moduleSubdomainWrap.style.display = "flex";
-        dom.moduleSubdomainLink.href = mod.subdomain;
-        dom.moduleSubdomainLink.textContent = mod.subdomain;
+        dom.moduleSubdomainLink.href = profile.subdomain;
+        dom.moduleSubdomainLink.textContent = profile.subdomain;
       } else {
         dom.moduleSubdomainWrap.style.display = "none";
         dom.moduleSubdomainLink.href = "https://rehgexec.com";
@@ -498,16 +541,24 @@
 
     if (dom.modulePoints) {
       dom.modulePoints.innerHTML = "";
-      mod.points.forEach(function (pt) {
+      (profile.points || []).forEach(function (pt) {
         const li = document.createElement("li");
         li.textContent = pt;
         dom.modulePoints.appendChild(li);
       });
     }
 
-    if (suiteCarouselApi) {
+    if (typeof idx === "number" && suiteCarouselApi) {
       suiteCarouselApi.updateUI(idx);
     }
+  }
+
+  function populateModuleModal(index) {
+    const total = CARBON_SUITE_MODULES.length;
+    const idx = ((index % total) + total) % total;
+    const mod = CARBON_SUITE_MODULES[idx];
+    state.activeModuleIndex = idx;
+    applyModalProfile(mod, idx);
   }
 
   function openModuleModal(index, triggerEl) {
@@ -533,16 +584,34 @@
     }
   }
 
-  function openStandaloneFeatureModal(featureKey, triggerEl) {
-    if (featureKey === "carbon-pos") {
-      openPrincipalModal("CARBON™ | POS Front-Line Ecosystem Briefing", triggerEl);
+  function openNamedPopoutModal(key, triggerEl) {
+    if (!dom.moduleModal) return;
+    const special = SPECIAL_POPOUT_PROFILES[key];
+    if (special) {
+      if (triggerEl) {
+        state.lastFocusedEl = triggerEl;
+      } else if (!state.activeModalId) {
+        state.lastFocusedEl = document.activeElement;
+      }
+      if (dom.principalModal) {
+        dom.principalModal.style.display = "none";
+      }
+      state.activeModuleIndex = special.moduleIndex || 0;
+      applyModalProfile(special, state.activeModuleIndex);
+      dom.moduleModal.style.display = "flex";
+      state.activeModalId = "carbon-module-modal";
+      document.body.classList.add("modal-open");
+      if (dom.moduleModalDialog) {
+        dom.moduleModalDialog.scrollTop = 0;
+        dom.moduleModalDialog.focus();
+      }
       return;
     }
-    if (featureKey === "carbon-digital-footprint") {
-      openPrincipalModal("CARBON™ | DIGITAL FOOTPRINT Architecture Briefing", triggerEl);
-      return;
-    }
-    openModuleModal(0, triggerEl);
+
+    const foundIdx = CARBON_SUITE_MODULES.findIndex(function (m) {
+      return m.id === key;
+    });
+    openModuleModal(foundIdx >= 0 ? foundIdx : 0, triggerEl);
   }
 
   function openPrincipalModal(topicLabel, triggerEl) {
@@ -634,7 +703,7 @@
     featureCards.forEach(function (card) {
       function handleActivate() {
         const key = card.getAttribute("data-module-key");
-        openStandaloneFeatureModal(key, card);
+        openNamedPopoutModal(key, card);
       }
       card.addEventListener("click", handleActivate);
       card.addEventListener("keydown", function (e) {
@@ -642,6 +711,14 @@
           e.preventDefault();
           handleActivate();
         }
+      });
+    });
+
+    const footerModuleBtns = document.querySelectorAll("[data-footer-module]");
+    footerModuleBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const key = btn.getAttribute("data-footer-module");
+        openNamedPopoutModal(key, btn);
       });
     });
 
@@ -683,9 +760,8 @@
 
     if (dom.moduleRequestBtn) {
       dom.moduleRequestBtn.addEventListener("click", function () {
-        const currentMod = CARBON_SUITE_MODULES[state.activeModuleIndex];
-        const topic = currentMod ? currentMod.title + " Briefing" : "CARBON™ Suite Briefing";
-        openPrincipalModal(topic, dom.moduleRequestBtn);
+        const currentTitle = dom.moduleTitle ? dom.moduleTitle.textContent : "CARBON™ Suite Briefing";
+        openPrincipalModal(currentTitle + " Briefing", dom.moduleRequestBtn);
       });
     }
 
