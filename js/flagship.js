@@ -1,122 +1,108 @@
 (function () {
   "use strict";
 
-  const CARBON_MODULES = [
-    {
-      id: "carbon-pos",
-      badgeSrc: "rehg-carbon-pos-master (1).jpeg",
-      tag: "PILLAR 01 • FLOOR REGISTER",
-      title: "CARBON™ | POS",
-      subtitle: "Front-of-House Order & Shift Transaction Engine",
-      subdomain: "",
-      brief:
-        "Built for high-movement hospitality rooms where speed, modifier accuracy, and clean shift handoffs matter every minute of service.",
-      points: [
-        "Fast check building across active tables, tabs, and floor sections.",
-        "Structured modifier and prep routing for bar and kitchen stations.",
-        "Clean shift closeout alignment designed for real floor discipline."
-      ]
-    },
+  const CARBON_SUITE_MODULES = [
     {
       id: "carbon-sovereign-portal",
       badgeSrc: "carbon-sovereign-portal (1).jpeg",
-      tag: "PILLAR 02 • EXECUTIVE COMMAND",
+      tag: "ENGINE 01 • EXECUTIVE COMMAND",
       title: "CARBON™ | SOVEREIGN PORTAL",
-      subtitle: "Owner & Leadership Visibility Hub",
+      subtitle: "Owner & C-Suite Governance Hub",
       subdomain: "https://portal.rehgexec.com",
       brief:
-        "Centralizes executive oversight across venues, leadership roles, and daily operational check-ins without spreadsheet sprawl.",
+        "Built so an independent owner can lock their back door tonight without needing a six-figure enterprise IT team—surfacing variance in real time instead of 45 days later in a CPA's post-mortem.",
       points: [
-        "Single executive lens across single-venue and multi-market operations.",
-        "Structured leadership access and clear accountability lanes.",
-        "Direct connection to RICKS EXECUTIVE HOSPITALITY GROUP™ standards."
+        "Actual-vs.-theoretical visibility and blind drop-slot separation of duties.",
+        "Fuses immutable bedrock accounting principles with the surgical speed of Gemini AI.",
+        "Clear C-Suite oversight across single-venue and multi-market operations."
       ]
     },
     {
-      id: "carbon-digital-footprint",
-      badgeSrc: "carbon-web-vip (2).jpeg",
-      tag: "PILLAR 03 • BRAND & CONVERSION",
-      title: "CARBON™ | DIGITAL FOOTPRINT",
-      subtitle: "Hospitality Authority & Direct Guest Conversion Architecture",
+      id: "carbon-suites-master",
+      badgeSrc: "rehg-carbon-suites-master (1).jpeg",
+      tag: "ENGINE 02 • FULL SUITE ARCHITECTURE",
+      title: "CARBON™ | SUITES",
+      subtitle: "Self-Deployed Operational Engine Architecture",
       subdomain: "",
       brief:
-        "Replaces passive digital brochures with purpose-built hospitality conversion architecture aligned to how guests book, inquire, and engage.",
+        "An operator's real-life answer to the blind spots ordinary tech failed to close—connecting empirical floor execution, prime-cost ceilings, and executive oversight.",
       points: [
-        "Positioning crafted for upscale venues, dining rooms, and hospitality groups.",
-        "Clear guest pathways built around real hospitality workflows.",
-        "Cohesive visual authority connected to your operational stack."
+        "Self-deployed operational engines engineered for independent and multi-unit operators.",
+        "Anchored on prime-cost ceilings and real-time operational accountability.",
+        "Built from lived floor pressure rather than theoretical dashboards."
       ]
     },
     {
       id: "carbon-bar",
       badgeSrc: "carbon-bar-pos (1).jpeg",
-      tag: "PILLAR 04 • BEVERAGE DISCIPLINE",
+      tag: "ENGINE 03 • BEVERAGE DISCIPLINE",
       title: "CARBON™ | BAR",
       subtitle: "Well, Pour & Beverage Program Control",
       subdomain: "https://bar.rehgexec.com",
       brief:
-        "Brings structure to late-night well execution, spirit pours, bottle programs, and beverage accountability when the bar is three-deep.",
+        "Protects late-night well economics, spirit pours, and bottle discipline when service is three-deep—exposing pour drift before margins erode.",
       points: [
-        "Supports tight well standards and repeatable pour discipline.",
-        "Helps leadership spot beverage drift before end-of-month surprises.",
+        "Actual-vs.-theoretical beverage accountability across active bar wells.",
+        "Helps catch modifier drift, heavy pours, and par gaps in real time.",
         "Built for high-volume bars, lounges, and cocktail programs."
       ]
     },
     {
       id: "carbon-feeder",
       badgeSrc: "carbon-feeder-pos (1).jpeg",
-      tag: "PILLAR 05 • DEMAND & FLOW",
+      tag: "ENGINE 04 • DEMAND & FLOW",
       title: "CARBON™ | FEEDER",
       subtitle: "Traffic Generation, VIP Flow & Guest Pipeline",
       subdomain: "https://feeder.rehgexec.com",
       brief:
-        "Connects demand generation and pre-shift guest flow directly to venue capacity so marketing effort translates into real covers.",
+        "Connects demand generation and pre-shift guest flow directly to floor capacity so hospitality marketing turns into verified covers.",
       points: [
-        "Aligns promotional momentum with actual floor and table readiness.",
-        "Keeps guest pipeline visibility structured across active markets.",
-        "Supports repeatable booking and VIP coordination habits."
+        "Aligns guest acquisition and VIP arrival flow with venue readiness.",
+        "Structured visibility across active hospitality markets and corridors.",
+        "Supports consistent pre-shift coordination from front door to floor."
       ]
     },
     {
       id: "carbon-kitchen",
       badgeSrc: "carbon-kitchen-pos (1).jpeg",
-      tag: "PILLAR 06 • CULINARY & BOH",
+      tag: "ENGINE 05 • CULINARY & BOH",
       title: "CARBON™ | KITCHEN",
       subtitle: "Back-of-House Pass, Yield & Prep Alignment",
       subdomain: "https://kitchen.rehgexec.com",
       brief:
-        "Aligns ticket pacing, recipe specs, and prep discipline so back-of-house execution holds steady during peak service waves.",
+        "Aligns ticket pacing, recipe specs, and prep yields so back-of-house execution holds steady during peak service without end-of-month surprises.",
       points: [
-        "Focused on pass clarity, prep consistency, and culinary yield.",
-        "Bridges kitchen timing with front-of-house service expectations.",
-        "Designed around practical line realities rather than kitchen clutter."
+        "Tracks culinary yield discipline, prep flow, and pass consistency.",
+        "Supports prime-cost awareness across every kitchen station.",
+        "Designed for practical line speed without back-office lag."
       ]
     },
     {
       id: "carbon-loss",
       badgeSrc: "carbon-loss-pos (1).jpeg",
-      tag: "PILLAR 07 • SHRINKAGE & AUDIT",
+      tag: "ENGINE 06 • SHRINKAGE & AUDIT",
       title: "CARBON™ | LOSS",
       subtitle: "Variance, Shrinkage & Closeout Integrity",
       subdomain: "https://loss.rehgexec.com",
       brief:
-        "Highlights operational variance, closeout discrepancies, and shrinkage risks early so principals can act with facts rather than assumptions.",
+        "Surfaces closeout discrepancies, comps, voids, and inventory variance early—enforcing blind drop-slot separation of duties and real-time audit clarity.",
       points: [
-        "Surfaces anomalies across closeouts, comps, voids, and inventory.",
-        "Encourages disciplined daily verification across management teams.",
-        "Protects hard-earned venue margin across every operating week."
+        "Flags variance across closeouts, adjustments, and physical counts.",
+        "Reinforces blind drop-slot separation of duties at shift end.",
+        "Protects venue profit before variance compounds over weeks."
       ]
     }
   ];
 
   const PRINCIPAL_CONTACT = {
     name: "Michael Ricks — Founder & CEO",
-    email: "mricks@ricksexecutivehospitalitygroup.com",
+    email: "Mricks@rehgexec.com",
     phone: "404.594.3765"
   };
 
   const state = {
     activeModuleIndex: 0,
+    activeRealityIndex: 0,
     lastFocusedEl: null,
     activeModalId: null
   };
@@ -127,6 +113,15 @@
     dom.menuToggle = document.getElementById("mobile-menu-toggle");
     dom.menuDrawer = document.getElementById("mobile-nav-drawer");
 
+    // Shift reality carousel
+    dom.realityViewport = document.getElementById("reality-carousel-viewport");
+    dom.realityTrack = document.getElementById("reality-carousel-track");
+    dom.realityDots = document.getElementById("reality-carousel-dots");
+    dom.realityCounter = document.getElementById("reality-carousel-counter");
+    dom.realityPrevBtn = document.getElementById("reality-prev-btn");
+    dom.realityNextBtn = document.getElementById("reality-next-btn");
+
+    // CARBON™ suite carousel
     dom.carouselViewport = document.getElementById("carbon-carousel-viewport");
     dom.carouselTrack = document.getElementById("carbon-carousel-track");
     dom.carouselDots = document.getElementById("carbon-carousel-dots");
@@ -134,6 +129,7 @@
     dom.prevBtn = document.getElementById("carousel-prev-btn");
     dom.nextBtn = document.getElementById("carousel-next-btn");
 
+    // Modals
     dom.moduleModal = document.getElementById("carbon-module-modal");
     dom.moduleModalDialog = dom.moduleModal ? dom.moduleModal.querySelector(".modal-dialog") : null;
     dom.closeModuleBtn = document.getElementById("close-module-modal-btn");
@@ -188,22 +184,182 @@
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 1080) {
+      if (window.innerWidth > 1180) {
         setMobileMenuOpen(false);
       }
     });
   }
 
   /* ------------------------------------------------------------------------
-     CARBON™ HORIZONTAL CAROUSEL (ARROWS, DOTS, DRAG, WHEEL)
+     REUSABLE HORIZONTAL CAROUSEL HELPER (ARROWS, DOTS, DRAG, WHEEL)
      ------------------------------------------------------------------------ */
-  function renderCarouselSlides() {
-    if (!dom.carouselTrack || !dom.carouselDots) return;
+  function attachCarouselBehavior(cfg) {
+    const viewport = cfg.viewport;
+    const track = cfg.track;
+    const dotsContainer = cfg.dotsContainer;
+    const counterEl = cfg.counterEl;
+    const prevBtn = cfg.prevBtn;
+    const nextBtn = cfg.nextBtn;
+    const total = cfg.total;
+    const getLabel = cfg.getLabel;
+    const getIndex = cfg.getIndex;
+    const setIndex = cfg.setIndex;
 
+    if (!viewport || !track || !dotsContainer || total <= 0) return;
+
+    dotsContainer.innerHTML = "";
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "carousel-dot-btn" + (i === 0 ? " is-active" : "");
+      dot.setAttribute("aria-label", getLabel(i));
+      dot.addEventListener("click", function () {
+        goTo(i);
+      });
+      dotsContainer.appendChild(dot);
+    }
+
+    function updateUI(activeIdx) {
+      const wrapped = ((activeIdx % total) + total) % total;
+      setIndex(wrapped);
+      if (counterEl) {
+        counterEl.textContent = getLabel(wrapped);
+      }
+      const dots = dotsContainer.querySelectorAll(".carousel-dot-btn");
+      dots.forEach(function (d, idx) {
+        d.classList.toggle("is-active", idx === wrapped);
+      });
+    }
+
+    function goTo(targetIdx) {
+      const wrapped = ((targetIdx % total) + total) % total;
+      updateUI(wrapped);
+      const cards = track.children;
+      const targetCard = cards[wrapped];
+      if (targetCard) {
+        viewport.scrollTo({
+          left: targetCard.offsetLeft - track.offsetLeft,
+          behavior: "smooth"
+        });
+      }
+    }
+
+    function syncFromScroll() {
+      const cards = track.children;
+      if (!cards.length) return;
+      const currentScroll = viewport.scrollLeft;
+      let bestIdx = 0;
+      let bestDiff = Infinity;
+      for (let i = 0; i < cards.length; i++) {
+        const leftPos = cards[i].offsetLeft - track.offsetLeft;
+        const diff = Math.abs(leftPos - currentScroll);
+        if (diff < bestDiff) {
+          bestDiff = diff;
+          bestIdx = i;
+        }
+      }
+      updateUI(bestIdx);
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        goTo(getIndex() - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        goTo(getIndex() + 1);
+      });
+    }
+
+    let scrollTimer = null;
+    viewport.addEventListener("scroll", function () {
+      window.clearTimeout(scrollTimer);
+      scrollTimer = window.setTimeout(syncFromScroll, 80);
+    }, { passive: true });
+
+    viewport.addEventListener("wheel", function (e) {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        viewport.scrollLeft += e.deltaY;
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    let pointerDown = false;
+    let startX = 0;
+    let startScroll = 0;
+    let draggedDist = 0;
+
+    viewport.addEventListener("pointerdown", function (e) {
+      if (e.pointerType === "mouse" && e.button !== 0) return;
+      pointerDown = true;
+      draggedDist = 0;
+      startX = e.clientX;
+      startScroll = viewport.scrollLeft;
+      viewport.classList.add("is-dragging");
+      viewport.dataset.justDragged = "false";
+    });
+
+    window.addEventListener("pointermove", function (e) {
+      if (!pointerDown) return;
+      const dx = e.clientX - startX;
+      draggedDist = Math.max(draggedDist, Math.abs(dx));
+      viewport.scrollLeft = startScroll - dx;
+    });
+
+    window.addEventListener("pointerup", function () {
+      if (!pointerDown) return;
+      pointerDown = false;
+      viewport.classList.remove("is-dragging");
+      if (draggedDist > 8) {
+        viewport.dataset.justDragged = "true";
+        window.setTimeout(function () {
+          viewport.dataset.justDragged = "false";
+        }, 60);
+        syncFromScroll();
+      }
+    });
+
+    updateUI(0);
+    return { goTo: goTo, updateUI: updateUI };
+  }
+
+  let suiteCarouselApi = null;
+
+  function initRealityCarousel() {
+    const momentTitles = [
+      "7:30 AM Receiving & Invoice Drift",
+      "1:00 AM Bar Well & Pour Discipline",
+      "Friday Night Kitchen Pass & Yield",
+      "2:30 AM Closeout & Reconciliation"
+    ];
+
+    attachCarouselBehavior({
+      viewport: dom.realityViewport,
+      track: dom.realityTrack,
+      dotsContainer: dom.realityDots,
+      counterEl: dom.realityCounter,
+      prevBtn: dom.realityPrevBtn,
+      nextBtn: dom.realityNextBtn,
+      total: momentTitles.length,
+      getLabel: function (i) {
+        return "Moment 0" + (i + 1) + " of 04 • " + momentTitles[i];
+      },
+      getIndex: function () {
+        return state.activeRealityIndex;
+      },
+      setIndex: function (i) {
+        state.activeRealityIndex = i;
+      }
+    });
+  }
+
+  function renderCarbonSuiteCarousel() {
+    if (!dom.carouselTrack) return;
     dom.carouselTrack.innerHTML = "";
-    dom.carouselDots.innerHTML = "";
 
-    CARBON_MODULES.forEach(function (mod, idx) {
+    CARBON_SUITE_MODULES.forEach(function (mod, idx) {
       const card = document.createElement("article");
       card.className = "carbon-slide-card";
       card.setAttribute("role", "group");
@@ -211,12 +367,12 @@
       card.dataset.moduleIndex = String(idx);
 
       const well = document.createElement("div");
-      well.className = "badge-contain-well";
+      well.className = "badge-command-well";
 
       const img = document.createElement("img");
       img.src = mod.badgeSrc;
-      img.alt = mod.title + " Badge";
-      img.className = "badge-contain-img";
+      img.alt = mod.title + " Emblem";
+      img.className = "badge-command-img";
       img.loading = idx < 3 ? "eager" : "lazy";
       well.appendChild(img);
 
@@ -253,7 +409,7 @@
 
       const rightCue = document.createElement("span");
       rightCue.className = "slide-inspect-cue";
-      rightCue.textContent = "Inspect Module →";
+      rightCue.textContent = "Inspect Engine →";
 
       metaBar.appendChild(leftMeta);
       metaBar.appendChild(rightCue);
@@ -273,140 +429,24 @@
       });
 
       dom.carouselTrack.appendChild(card);
-
-      const dot = document.createElement("button");
-      dot.type = "button";
-      dot.className = "carousel-dot-btn" + (idx === 0 ? " is-active" : "");
-      dot.setAttribute("aria-label", "Go to " + mod.title);
-      dot.addEventListener("click", function () {
-        goToSlide(idx);
-      });
-      dom.carouselDots.appendChild(dot);
     });
 
-    updateCarouselUI(0);
-  }
-
-  function updateCarouselUI(activeIdx) {
-    state.activeModuleIndex = activeIdx;
-    const total = CARBON_MODULES.length;
-    if (dom.carouselCounter) {
-      const num = String(activeIdx + 1).padStart(2, "0");
-      const tot = String(total).padStart(2, "0");
-      dom.carouselCounter.textContent = "Module " + num + " of " + tot + " • " + CARBON_MODULES[activeIdx].title;
-    }
-
-    if (dom.carouselDots) {
-      const dots = dom.carouselDots.querySelectorAll(".carousel-dot-btn");
-      dots.forEach(function (d, i) {
-        d.classList.toggle("is-active", i === activeIdx);
-      });
-    }
-  }
-
-  function goToSlide(targetIdx) {
-    const total = CARBON_MODULES.length;
-    const wrapped = ((targetIdx % total) + total) % total;
-    updateCarouselUI(wrapped);
-
-    if (!dom.carouselViewport || !dom.carouselTrack) return;
-    const cards = dom.carouselTrack.querySelectorAll(".carbon-slide-card");
-    const targetCard = cards[wrapped];
-    if (targetCard) {
-      dom.carouselViewport.scrollTo({
-        left: targetCard.offsetLeft - dom.carouselTrack.offsetLeft,
-        behavior: "smooth"
-      });
-    }
-  }
-
-  function stepCarousel(delta) {
-    goToSlide(state.activeModuleIndex + delta);
-  }
-
-  function syncActiveSlideFromScroll() {
-    if (!dom.carouselViewport || !dom.carouselTrack) return;
-    const cards = dom.carouselTrack.querySelectorAll(".carbon-slide-card");
-    if (!cards.length) return;
-
-    const currentScroll = dom.carouselViewport.scrollLeft;
-    let closestIdx = 0;
-    let smallestDiff = Infinity;
-
-    cards.forEach(function (card, idx) {
-      const cardLeft = card.offsetLeft - dom.carouselTrack.offsetLeft;
-      const diff = Math.abs(cardLeft - currentScroll);
-      if (diff < smallestDiff) {
-        smallestDiff = diff;
-        closestIdx = idx;
-      }
-    });
-
-    updateCarouselUI(closestIdx);
-  }
-
-  function initCarouselInteractions() {
-    if (!dom.carouselViewport) return;
-
-    if (dom.prevBtn) {
-      dom.prevBtn.addEventListener("click", function () {
-        stepCarousel(-1);
-      });
-    }
-
-    if (dom.nextBtn) {
-      dom.nextBtn.addEventListener("click", function () {
-        stepCarousel(1);
-      });
-    }
-
-    let scrollTimer = null;
-    dom.carouselViewport.addEventListener("scroll", function () {
-      window.clearTimeout(scrollTimer);
-      scrollTimer = window.setTimeout(syncActiveSlideFromScroll, 80);
-    }, { passive: true });
-
-    dom.carouselViewport.addEventListener("wheel", function (e) {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        dom.carouselViewport.scrollLeft += e.deltaY;
-        e.preventDefault();
-      }
-    }, { passive: false });
-
-    let isPointerDown = false;
-    let startX = 0;
-    let startScrollLeft = 0;
-    let movedDistance = 0;
-
-    dom.carouselViewport.addEventListener("pointerdown", function (e) {
-      if (e.pointerType === "mouse" && e.button !== 0) return;
-      isPointerDown = true;
-      movedDistance = 0;
-      startX = e.clientX;
-      startScrollLeft = dom.carouselViewport.scrollLeft;
-      dom.carouselViewport.classList.add("is-dragging");
-      dom.carouselViewport.dataset.justDragged = "false";
-    });
-
-    window.addEventListener("pointermove", function (e) {
-      if (!isPointerDown || !dom.carouselViewport) return;
-      const dx = e.clientX - startX;
-      movedDistance = Math.max(movedDistance, Math.abs(dx));
-      dom.carouselViewport.scrollLeft = startScrollLeft - dx;
-    });
-
-    window.addEventListener("pointerup", function () {
-      if (!isPointerDown || !dom.carouselViewport) return;
-      isPointerDown = false;
-      dom.carouselViewport.classList.remove("is-dragging");
-      if (movedDistance > 8) {
-        dom.carouselViewport.dataset.justDragged = "true";
-        window.setTimeout(function () {
-          if (dom.carouselViewport) {
-            dom.carouselViewport.dataset.justDragged = "false";
-          }
-        }, 60);
-        syncActiveSlideFromScroll();
+    suiteCarouselApi = attachCarouselBehavior({
+      viewport: dom.carouselViewport,
+      track: dom.carouselTrack,
+      dotsContainer: dom.carouselDots,
+      counterEl: dom.carouselCounter,
+      prevBtn: dom.prevBtn,
+      nextBtn: dom.nextBtn,
+      total: CARBON_SUITE_MODULES.length,
+      getLabel: function (i) {
+        return "Module 0" + (i + 1) + " of 06 • " + CARBON_SUITE_MODULES[i].title;
+      },
+      getIndex: function () {
+        return state.activeModuleIndex;
+      },
+      setIndex: function (i) {
+        state.activeModuleIndex = i;
       }
     });
   }
@@ -434,9 +474,9 @@
   }
 
   function populateModuleModal(index) {
-    const total = CARBON_MODULES.length;
+    const total = CARBON_SUITE_MODULES.length;
     const idx = ((index % total) + total) % total;
-    const mod = CARBON_MODULES[idx];
+    const mod = CARBON_SUITE_MODULES[idx];
     state.activeModuleIndex = idx;
 
     if (dom.moduleBadgeImg) {
@@ -477,7 +517,9 @@
       });
     }
 
-    updateCarouselUI(idx);
+    if (suiteCarouselApi) {
+      suiteCarouselApi.updateUI(idx);
+    }
   }
 
   function openModuleModal(index, triggerEl) {
@@ -501,6 +543,18 @@
       dom.moduleModalDialog.scrollTop = 0;
       dom.moduleModalDialog.focus();
     }
+  }
+
+  function openStandaloneFeatureModal(featureKey, triggerEl) {
+    if (featureKey === "carbon-pos") {
+      openPrincipalModal("CARBON™ | POS Front-Line Ecosystem Briefing", triggerEl);
+      return;
+    }
+    if (featureKey === "carbon-digital-footprint") {
+      openPrincipalModal("CARBON™ | DIGITAL FOOTPRINT Architecture Briefing", triggerEl);
+      return;
+    }
+    openModuleModal(0, triggerEl);
   }
 
   function openPrincipalModal(topicLabel, triggerEl) {
@@ -560,7 +614,7 @@
       "Venue / Group: " + (venue || "Not provided"),
       "",
       "Operational Context:",
-      notes || "Looking to connect regarding hospitality operations and CARBON™ capabilities.",
+      notes || "Looking to connect regarding empirical hospitality operations, CARBON™ capabilities, and floor discipline.",
       "",
       "Sent via https://rehgexec.com"
     ];
@@ -585,6 +639,21 @@
         setMobileMenuOpen(false);
         const label = btn.getAttribute("data-open-principal") || "Principal Conversation";
         openPrincipalModal(label, btn);
+      });
+    });
+
+    const featureCards = document.querySelectorAll(".feature-badge-card[data-module-key]");
+    featureCards.forEach(function (card) {
+      function handleActivate() {
+        const key = card.getAttribute("data-module-key");
+        openStandaloneFeatureModal(key, card);
+      }
+      card.addEventListener("click", handleActivate);
+      card.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleActivate();
+        }
       });
     });
 
@@ -626,7 +695,7 @@
 
     if (dom.moduleRequestBtn) {
       dom.moduleRequestBtn.addEventListener("click", function () {
-        const currentMod = CARBON_MODULES[state.activeModuleIndex];
+        const currentMod = CARBON_SUITE_MODULES[state.activeModuleIndex];
         const topic = currentMod ? currentMod.title + " Briefing" : "CARBON™ Suite Briefing";
         openPrincipalModal(topic, dom.moduleRequestBtn);
       });
@@ -642,7 +711,7 @@
 
         if (!nameVal) {
           if (dom.formStatus) {
-            dom.formStatus.textContent = "Please enter your name before composing the dispatch.";
+            dom.formStatus.textContent = "Please enter your name before composing the dispatch to Mricks@rehgexec.com.";
           }
           if (dom.callerName) dom.callerName.focus();
           return;
@@ -684,8 +753,8 @@
   document.addEventListener("DOMContentLoaded", function () {
     cacheDom();
     initMobileMenu();
-    renderCarouselSlides();
-    initCarouselInteractions();
+    initRealityCarousel();
+    renderCarbonSuiteCarousel();
     initModalsAndForms();
   });
 })();

@@ -1,7 +1,7 @@
 /* ==========================================================================
-   RICKS EXECUTIVE HOSPITALITY GROUP™ — FLAGSHIP EXECUTIVE STYLESHEET
-   Clean Light Mode (#FFFFFF / #F8FAFC) • Rich Slate/Ink (#0F172A / #334155)
-   24K Sovereign Gold (#D4AF37) Accents & CNC-Crisp Borders
+   RICKS EXECUTIVE HOSPITALITY GROUP™ — FLAGSHIP EXECUTIVE STYLESHEET (V2)
+   Crisp White (#FFFFFF) & Alabaster (#F8FAFC) Surfaces
+   Rich Ink/Slate Typography (#0F172A / #334155) • 24K Sovereign Gold (#D4AF37)
    ========================================================================== */
 
 :root {
@@ -12,14 +12,14 @@
   --ink-secondary: #334155;
   --ink-muted: #64748B;
   --gold-primary: #D4AF37;
-  --gold-bright: #E5C158;
-  --gold-deep: #A6821E;
-  --gold-tint: rgba(212, 175, 55, 0.12);
+  --gold-bright: #E6C35C;
+  --gold-deep: #9E7818;
+  --gold-tint: rgba(212, 175, 55, 0.14);
   --border-hairline: #E2E8F0;
-  --border-gold: rgba(212, 175, 55, 0.55);
+  --border-gold: rgba(212, 175, 55, 0.62);
   --shadow-soft: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
-  --shadow-elevated: 0 20px 45px -15px rgba(15, 23, 42, 0.14);
-  --shadow-gold: 0 12px 28px -8px rgba(212, 175, 55, 0.34);
+  --shadow-elevated: 0 22px 50px -15px rgba(15, 23, 42, 0.16);
+  --shadow-gold: 0 14px 32px -8px rgba(212, 175, 55, 0.42);
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
@@ -78,11 +78,11 @@ textarea {
 }
 
 .section-band {
-  padding: 84px 0;
+  padding: 80px 0;
 }
 
 /* ==========================================================================
-   TYPOGRAPHY & EYEBROWS
+   TYPOGRAPHY, EYEBROWS & DOCTRINE CALLOUT
    ========================================================================== */
 .eyebrow-tag {
   display: inline-flex;
@@ -108,9 +108,9 @@ textarea {
 }
 
 .hero-title {
-  margin: 18px 0 18px;
+  margin: 18px 0 16px;
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2.4rem, 4.6vw, 3.85rem);
+  font-size: clamp(2.4rem, 4.5vw, 3.85rem);
   font-weight: 700;
   line-height: 1.06;
   letter-spacing: -0.015em;
@@ -122,35 +122,60 @@ textarea {
 }
 
 .hero-lead {
-  margin: 0 0 28px;
+  margin: 0 0 22px;
   font-size: 1.0625rem;
   line-height: 1.72;
   color: var(--ink-secondary);
-  max-width: 600px;
 }
 
-.section-heading-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 20px;
-  margin-bottom: 36px;
+.doctrine-callout {
+  margin: 0 0 28px;
+  padding: 18px 22px;
+  border-radius: var(--radius-md);
+  background: var(--bg-alabaster);
+  border: 1px solid var(--border-gold);
+  border-left: 4px solid var(--gold-primary);
+  box-shadow: var(--shadow-soft);
+}
+
+.doctrine-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 6px;
+}
+
+.doctrine-text {
+  margin: 0;
+  font-size: 0.925rem;
+  line-height: 1.66;
+  color: var(--ink-primary);
+  font-weight: 500;
+}
+
+/* Full-frame section intro spanning across the container width */
+.full-frame-header {
+  width: 100%;
+  margin-bottom: 34px;
 }
 
 .section-title {
-  margin: 12px 0 0;
+  margin: 12px 0 10px;
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2rem, 3.4vw, 2.85rem);
+  font-size: clamp(2.05rem, 3.5vw, 2.9rem);
   font-weight: 700;
   line-height: 1.1;
   color: var(--ink-primary);
 }
 
-.section-subtitle {
+.full-frame-lead {
   margin: 0;
-  max-width: 460px;
-  font-size: 0.9625rem;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.68;
   color: var(--ink-secondary);
 }
 
@@ -186,7 +211,7 @@ textarea {
 
 .btn-gold:hover {
   transform: translateY(-1px);
-  box-shadow: 0 14px 32px -8px rgba(212, 175, 55, 0.48);
+  box-shadow: 0 16px 34px -8px rgba(212, 175, 55, 0.52);
 }
 
 .btn-outline {
@@ -202,45 +227,46 @@ textarea {
 }
 
 /* ==========================================================================
-   1. EXECUTIVE COMMAND HEADER
+   1. EXECUTIVE COMMAND HEADER & COMMANDING GOLD CREST
    ========================================================================== */
 .exec-header {
   position: sticky;
   top: 0;
   z-index: 90;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-hairline);
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  border-bottom: 2px solid var(--border-gold);
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.06);
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  min-height: 84px;
+  gap: 16px;
+  min-height: 92px;
 }
 
 .brand-lockup {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   flex-shrink: 0;
 }
 
-.brand-crest-box {
-  width: 62px;
-  height: 54px;
-  border-radius: var(--radius-sm);
+.brand-crest-command {
+  width: 78px;
+  height: 68px;
+  border-radius: var(--radius-md);
   background: var(--bg-white);
-  border: 1px solid var(--border-gold);
-  padding: 4px 6px;
+  border: 2px solid var(--gold-primary);
+  padding: 5px 7px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   flex-shrink: 0;
+  box-shadow: 0 8px 22px rgba(212, 175, 55, 0.28);
 }
 
 .brand-crest-img {
@@ -257,7 +283,7 @@ textarea {
 }
 
 .brand-name-primary {
-  font-size: 0.78rem;
+  font-size: 0.84rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   color: var(--ink-primary);
@@ -265,8 +291,8 @@ textarea {
 }
 
 .brand-name-secondary {
-  font-size: 0.68rem;
-  font-weight: 700;
+  font-size: 0.72rem;
+  font-weight: 800;
   letter-spacing: 0.12em;
   color: var(--gold-deep);
   white-space: nowrap;
@@ -275,11 +301,11 @@ textarea {
 .primary-nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 18px;
 }
 
 .primary-nav a {
-  font-size: 0.875rem;
+  font-size: 0.84rem;
   font-weight: 600;
   color: var(--ink-secondary);
   white-space: nowrap;
@@ -369,55 +395,76 @@ textarea {
 }
 
 /* ==========================================================================
-   2. LEAD-OFF HERO & FLOOR REALITY STORY
+   2. LEAD-OFF HERO & COMMANDING GOLD CREST SHOWCASE
    ========================================================================== */
 .hero-section {
   background: linear-gradient(180deg, var(--bg-alabaster) 0%, var(--bg-white) 100%);
-  padding-top: 56px;
+  padding-top: 48px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1.08fr 0.92fr;
   gap: 44px;
   align-items: center;
+}
+
+.hero-crest-showcase {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 18px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-white);
+  border: 2px solid var(--gold-primary);
+  box-shadow: 0 14px 34px -10px rgba(212, 175, 55, 0.34);
+}
+
+.hero-crest-plate {
+  width: 108px;
+  height: 92px;
+  padding: 6px;
+  border-radius: var(--radius-md);
+  background: var(--bg-white);
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero-crest-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.hero-crest-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.hero-crest-kicker {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.hero-crest-sub {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink-primary);
 }
 
 .hero-cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-bottom: 32px;
-}
-
-.hero-pillars {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  padding-top: 22px;
-  border-top: 1px solid var(--border-hairline);
-}
-
-.pillar-pill {
-  padding: 12px 14px;
-  border-radius: var(--radius-md);
-  background: var(--bg-alabaster);
-  border: 1px solid var(--border-hairline);
-}
-
-.pillar-pill strong {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--ink-primary);
-  margin-bottom: 2px;
-}
-
-.pillar-pill span {
-  display: block;
-  font-size: 0.78rem;
-  color: var(--ink-muted);
-  line-height: 1.4;
 }
 
 .editorial-frame {
@@ -431,7 +478,7 @@ textarea {
 
 .hero-photo-img {
   width: 100%;
-  height: 410px;
+  height: 450px;
   object-fit: cover;
   object-position: center top;
 }
@@ -457,62 +504,8 @@ textarea {
   color: var(--ink-secondary);
 }
 
-.floor-reality-block {
-  margin-top: 76px;
-  padding-top: 56px;
-  border-top: 1px solid var(--border-hairline);
-}
-
-.reality-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.exec-card {
-  background: var(--bg-white);
-  border: 1px solid var(--border-hairline);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
-}
-
-.exec-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--border-gold);
-  box-shadow: var(--shadow-elevated);
-}
-
-.reality-card {
-  border-top: 3px solid var(--gold-primary);
-}
-
-.reality-stamp {
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: var(--gold-deep);
-  margin-bottom: 10px;
-}
-
-.card-title {
-  margin: 0 0 10px;
-  font-size: 1.08rem;
-  font-weight: 800;
-  color: var(--ink-primary);
-  line-height: 1.3;
-}
-
-.card-copy {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--ink-secondary);
-  line-height: 1.62;
-}
-
 /* ==========================================================================
-   3. COAST-TO-COAST SKYLINE TRANSITION (DALLAS -> MIAMI -> ATLANTA)
+   3. COAST-TO-COAST HOSPITALITY PERSPECTIVE (PA • FL • TX • GA • CA)
    ========================================================================== */
 .skyline-section {
   background: var(--bg-alabaster);
@@ -523,14 +516,14 @@ textarea {
 .skyline-banner-shell {
   border-radius: var(--radius-xl);
   overflow: hidden;
-  border: 1px solid var(--border-gold);
+  border: 2px solid var(--gold-primary);
   box-shadow: var(--shadow-elevated);
   background: var(--ink-primary);
 }
 
 .skyline-media-wrap {
   position: relative;
-  min-height: 430px;
+  min-height: 460px;
   display: flex;
   align-items: flex-end;
 }
@@ -548,42 +541,18 @@ textarea {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    90deg,
-    rgba(15, 23, 42, 0.92) 0%,
-    rgba(15, 23, 42, 0.72) 52%,
-    rgba(15, 23, 42, 0.34) 100%
+    95deg,
+    rgba(15, 23, 42, 0.93) 0%,
+    rgba(15, 23, 42, 0.78) 58%,
+    rgba(15, 23, 42, 0.42) 100%
   );
-}
-
-/* Clean Crest Accent Positioned Top-Right Without Obstructing Skyscrapers */
-.skyline-crest-corner {
-  position: absolute;
-  top: 22px;
-  right: 22px;
-  z-index: 2;
-  width: 74px;
-  height: 64px;
-  padding: 5px 8px;
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid var(--gold-primary);
-  box-shadow: var(--shadow-soft);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.skyline-crest-corner-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 
 .skyline-overlay-content {
   position: relative;
   z-index: 2;
-  max-width: 650px;
-  padding: 36px;
+  max-width: 780px;
+  padding: 40px;
   color: #FFFFFF;
 }
 
@@ -593,52 +562,71 @@ textarea {
   gap: 8px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 23, 42, 0.88);
   border: 1px solid var(--gold-primary);
   color: var(--gold-bright);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
 }
 
 .skyline-title {
-  margin: 14px 0 10px;
+  margin: 14px 0 12px;
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2rem, 3.6vw, 2.9rem);
+  font-size: clamp(2.05rem, 3.6vw, 2.9rem);
   font-weight: 700;
   line-height: 1.08;
   color: #FFFFFF;
 }
 
 .skyline-copy {
-  margin: 0 0 20px;
-  font-size: 0.98rem;
-  line-height: 1.65;
+  margin: 0 0 14px;
+  font-size: 0.9625rem;
+  line-height: 1.66;
   color: #E2E8F0;
+}
+
+.skyline-copy strong {
+  color: var(--gold-bright);
 }
 
 .market-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-top: 18px;
 }
 
 .market-chip {
-  padding: 6px 14px;
+  padding: 6px 15px;
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(229, 193, 88, 0.65);
+  border: 1px solid rgba(229, 193, 88, 0.72);
   color: #FFFFFF;
   font-size: 0.8125rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
 }
 
 /* ==========================================================================
-   4. CARBON™ ECOSYSTEM HORIZONTAL CAROUSEL
+   4. WHERE MARGINS ARE WON OR LOST — SCROLLABLE SHIFT CAROUSEL
    ========================================================================== */
-.carbon-section {
+.reality-section {
   background: var(--bg-white);
+}
+
+.exec-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.exec-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-elevated);
 }
 
 .carousel-shell {
@@ -647,6 +635,10 @@ textarea {
   border-radius: var(--radius-xl);
   padding: 24px;
   box-shadow: var(--shadow-soft);
+}
+
+.reality-carousel-shell {
+  border-color: var(--border-gold);
 }
 
 .carousel-toolbar {
@@ -716,14 +708,76 @@ textarea {
   padding: 4px 2px 8px;
 }
 
+.essay-slide-card {
+  flex: 0 0 calc((100% - 20px) / 2);
+  min-width: 310px;
+  scroll-snap-align: start;
+  border-top: 3px solid var(--gold-primary);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.essay-photo-well {
+  width: 100%;
+  height: 255px;
+  overflow: hidden;
+  background: var(--bg-warm-stone);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.essay-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.essay-card-body {
+  padding: 22px 24px 24px;
+}
+
+.reality-stamp {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--gold-deep);
+  margin-bottom: 8px;
+}
+
+.card-title {
+  margin: 0 0 10px;
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--ink-primary);
+  line-height: 1.3;
+}
+
+.card-copy {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-secondary);
+  line-height: 1.62;
+}
+
+/* ==========================================================================
+   5. CARBON™ SUITE HORIZONTAL CAROUSEL (COMMANDING BADGES)
+   ========================================================================== */
+.carbon-section {
+  background: var(--bg-alabaster);
+  border-top: 1px solid var(--border-hairline);
+}
+
 .carbon-slide-card {
   flex: 0 0 calc((100% - 40px) / 3);
-  min-width: 290px;
+  min-width: 300px;
   scroll-snap-align: start;
   background: var(--bg-white);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -738,13 +792,14 @@ textarea {
   box-shadow: var(--shadow-elevated);
 }
 
-.badge-contain-well {
+/* Commanding full-bleed white box badge fill */
+.badge-command-well {
   width: 100%;
-  height: 210px;
+  height: 244px;
   border-radius: var(--radius-md);
   background: var(--bg-white);
-  border: 1px solid var(--border-hairline);
-  padding: 12px;
+  border: 1px solid var(--border-gold);
+  padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -752,13 +807,19 @@ textarea {
   overflow: hidden;
 }
 
-.badge-contain-img {
+.badge-command-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center;
+  transform: scale(1.06);
   user-select: none;
   -webkit-user-drag: none;
+  transition: transform 0.2s ease;
+}
+
+.carbon-slide-card:hover .badge-command-img {
+  transform: scale(1.1);
 }
 
 .slide-tag {
@@ -772,7 +833,7 @@ textarea {
 
 .slide-title {
   margin: 0 0 4px;
-  font-size: 1.125rem;
+  font-size: 1.15rem;
   font-weight: 800;
   color: var(--ink-primary);
 }
@@ -834,7 +895,105 @@ textarea {
 }
 
 /* ==========================================================================
-   5. 1-ON-1 TRAINED ADVISORS & OPERATOR NETWORK
+   6. STANDALONE FEATURE EXPERIENCE: CARBON™ | DIGITAL FOOTPRINT & POS
+   ========================================================================== */
+.footprint-feature-section {
+  background: var(--bg-white);
+  border-top: 1px solid var(--border-hairline);
+}
+
+.footprint-feature-panel {
+  background: linear-gradient(180deg, var(--bg-alabaster) 0%, var(--bg-white) 100%);
+  border: 2px solid var(--border-gold);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  box-shadow: var(--shadow-elevated);
+}
+
+.footprint-feature-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.feature-lead-paragraph {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  line-height: 1.72;
+  color: var(--ink-primary);
+}
+
+.feature-body-paragraph {
+  margin: 0 0 24px;
+  font-size: 0.9375rem;
+  line-height: 1.72;
+  color: var(--ink-secondary);
+}
+
+.footprint-badges-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.feature-badge-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.feature-badge-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.feature-badge-well {
+  width: 100%;
+  height: 176px;
+  border-radius: var(--radius-md);
+  background: var(--bg-white);
+  border: 1px solid var(--border-hairline);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.feature-badge-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1.05);
+}
+
+.feature-badge-meta {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.feature-badge-meta strong {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--ink-primary);
+}
+
+.feature-badge-meta span {
+  font-size: 0.78rem;
+  color: var(--gold-deep);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   7. THE HUMAN NETWORK: 1-ON-1 TRAINED ADVISORS & VENDOR ALLIANCES
    ========================================================================== */
 .advisory-section {
   background: var(--bg-alabaster);
@@ -850,7 +1009,7 @@ textarea {
 
 .advisory-photo-img {
   width: 100%;
-  height: 360px;
+  height: 380px;
   object-fit: cover;
   object-position: center top;
 }
@@ -863,12 +1022,13 @@ textarea {
 
 .advisory-column-card {
   height: 100%;
+  padding: 24px;
 }
 
 .column-badge {
   font-size: 0.7rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.11em;
   color: var(--gold-deep);
   margin-bottom: 8px;
 }
@@ -884,7 +1044,7 @@ textarea {
   margin: 0 0 16px;
   font-size: 0.8875rem;
   color: var(--ink-secondary);
-  line-height: 1.58;
+  line-height: 1.6;
 }
 
 .clean-check-list {
@@ -948,7 +1108,7 @@ textarea {
 }
 
 /* ==========================================================================
-   6. SOVEREIGN FOOTER
+   8. SOVEREIGN FOOTER
    ========================================================================== */
 .sovereign-footer {
   background: var(--bg-white);
@@ -965,12 +1125,13 @@ textarea {
 }
 
 .footer-crest-wrap {
-  width: 92px;
-  height: 74px;
+  width: 112px;
+  height: 90px;
   padding: 6px 8px;
   border-radius: var(--radius-md);
   background: var(--bg-white);
-  border: 1px solid var(--border-gold);
+  border: 2px solid var(--gold-primary);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1074,7 +1235,7 @@ textarea {
 }
 
 /* ==========================================================================
-   7. POP-OUT MODALS (HIDDEN UNTIL TRIGGERED)
+   9. POP-OUT MODALS (HIDDEN UNTIL TRIGGERED)
    ========================================================================== */
 .modal-backdrop {
   position: fixed;
@@ -1171,14 +1332,15 @@ textarea {
 }
 
 .module-badge-stage {
-  background: var(--bg-alabaster);
-  border: 1px solid var(--border-hairline);
+  background: var(--bg-white);
+  border: 1px solid var(--border-gold);
   border-radius: var(--radius-lg);
-  padding: 18px;
+  padding: 12px;
   min-height: 290px;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .module-modal-badge-img {
@@ -1186,6 +1348,7 @@ textarea {
   max-height: 280px;
   object-fit: contain;
   object-position: center;
+  transform: scale(1.04);
 }
 
 .module-subtitle {
@@ -1269,7 +1432,6 @@ textarea {
   flex: 1;
 }
 
-/* Principal Conversation Modal Form */
 .principal-identity-card {
   padding: 14px 18px;
   border-radius: var(--radius-md);
@@ -1371,7 +1533,7 @@ textarea {
 /* ==========================================================================
    RESPONSIVE BREAKPOINTS
    ========================================================================== */
-@media (max-width: 1080px) {
+@media (max-width: 1180px) {
   .primary-nav {
     display: none;
   }
@@ -1379,14 +1541,22 @@ textarea {
   .mobile-menu-toggle {
     display: inline-flex;
   }
+}
 
-  .hero-grid {
+@media (max-width: 1024px) {
+  .hero-grid,
+  .footprint-feature-grid,
+  .advisory-layout {
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
-  .advisory-layout {
-    grid-template-columns: 1fr;
+  .essay-slide-card {
+    flex: 0 0 82%;
+  }
+
+  .carbon-slide-card {
+    flex: 0 0 calc((100% - 20px) / 2);
   }
 
   .footer-grid {
@@ -1394,15 +1564,8 @@ textarea {
   }
 }
 
-@media (max-width: 920px) {
-  .reality-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .advisory-columns {
-    grid-template-columns: 1fr;
-  }
-
+@media (max-width: 780px) {
+  .advisory-columns,
   .module-modal-body {
     grid-template-columns: 1fr;
   }
@@ -1418,55 +1581,50 @@ textarea {
   }
 
   .header-inner {
-    min-height: 76px;
+    min-height: 80px;
     gap: 10px;
   }
 
-  .brand-crest-box {
-    width: 50px;
-    height: 44px;
+  .brand-crest-command {
+    width: 62px;
+    height: 54px;
   }
 
   .brand-name-primary {
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
+    font-size: 0.72rem;
+    letter-spacing: 0.11em;
   }
 
   .brand-name-secondary {
-    font-size: 0.58rem;
-    letter-spacing: 0.08em;
+    font-size: 0.62rem;
+    letter-spacing: 0.09em;
   }
 
   .header-cta-btn {
     display: none;
   }
 
-  .hero-pillars {
-    grid-template-columns: 1fr;
+  .hero-crest-showcase {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .reality-grid {
-    grid-template-columns: 1fr;
+  .footprint-feature-panel {
+    padding: 22px;
   }
 
   .skyline-media-wrap {
-    min-height: 390px;
-  }
-
-  .skyline-crest-corner {
-    width: 60px;
-    height: 52px;
-    top: 16px;
-    right: 16px;
+    min-height: 440px;
   }
 
   .skyline-overlay-content {
-    padding: 84px 22px 26px;
+    padding: 28px 22px;
   }
 
+  .essay-slide-card,
   .carbon-slide-card {
-    flex: 0 0 86%;
-    min-width: 260px;
+    flex: 0 0 88%;
+    min-width: 265px;
   }
 
   .form-row-2 {
