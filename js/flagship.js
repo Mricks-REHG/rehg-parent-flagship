@@ -4,7 +4,7 @@
   const CARBON_MODULES = [
     {
       id: "carbon-pos",
-      badgeSrc: "assets/rehg-carbon-pos-master.jpeg",
+      badgeSrc: "rehg-carbon-pos-master (1).jpeg",
       tag: "PILLAR 01 • FLOOR REGISTER",
       title: "CARBON™ | POS",
       subtitle: "Front-of-House Order & Shift Transaction Engine",
@@ -19,7 +19,7 @@
     },
     {
       id: "carbon-sovereign-portal",
-      badgeSrc: "assets/carbon-sovereign-portal.jpeg",
+      badgeSrc: "carbon-sovereign-portal (1).jpeg",
       tag: "PILLAR 02 • EXECUTIVE COMMAND",
       title: "CARBON™ | SOVEREIGN PORTAL",
       subtitle: "Owner & Leadership Visibility Hub",
@@ -34,7 +34,7 @@
     },
     {
       id: "carbon-digital-footprint",
-      badgeSrc: "assets/carbon-web-vip.jpeg",
+      badgeSrc: "carbon-web-vip (2).jpeg",
       tag: "PILLAR 03 • BRAND & CONVERSION",
       title: "CARBON™ | DIGITAL FOOTPRINT",
       subtitle: "Hospitality Authority & Direct Guest Conversion Architecture",
@@ -49,7 +49,7 @@
     },
     {
       id: "carbon-bar",
-      badgeSrc: "assets/carbon-bar-pos.jpeg",
+      badgeSrc: "carbon-bar-pos (1).jpeg",
       tag: "PILLAR 04 • BEVERAGE DISCIPLINE",
       title: "CARBON™ | BAR",
       subtitle: "Well, Pour & Beverage Program Control",
@@ -64,7 +64,7 @@
     },
     {
       id: "carbon-feeder",
-      badgeSrc: "assets/carbon-feeder-pos.jpeg",
+      badgeSrc: "carbon-feeder-pos (1).jpeg",
       tag: "PILLAR 05 • DEMAND & FLOW",
       title: "CARBON™ | FEEDER",
       subtitle: "Traffic Generation, VIP Flow & Guest Pipeline",
@@ -79,7 +79,7 @@
     },
     {
       id: "carbon-kitchen",
-      badgeSrc: "assets/carbon-kitchen-pos.jpeg",
+      badgeSrc: "carbon-kitchen-pos (1).jpeg",
       tag: "PILLAR 06 • CULINARY & BOH",
       title: "CARBON™ | KITCHEN",
       subtitle: "Back-of-House Pass, Yield & Prep Alignment",
@@ -94,7 +94,7 @@
     },
     {
       id: "carbon-loss",
-      badgeSrc: "assets/carbon-loss-pos.jpeg",
+      badgeSrc: "carbon-loss-pos (1).jpeg",
       tag: "PILLAR 07 • SHRINKAGE & AUDIT",
       title: "CARBON™ | LOSS",
       subtitle: "Variance, Shrinkage & Closeout Integrity",
@@ -366,7 +366,6 @@
       scrollTimer = window.setTimeout(syncActiveSlideFromScroll, 80);
     }, { passive: true });
 
-    // Translate vertical mouse wheel over horizontal carousel into horizontal scroll
     dom.carouselViewport.addEventListener("wheel", function (e) {
       if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
         dom.carouselViewport.scrollLeft += e.deltaY;
@@ -374,7 +373,6 @@
       }
     }, { passive: false });
 
-    // Pointer / drag support
     let isPointerDown = false;
     let startX = 0;
     let startScrollLeft = 0;
@@ -578,7 +576,6 @@
   }
 
   function initModalsAndForms() {
-    // Ensure modals start strictly hidden on initial load
     hideAllModals();
     state.lastFocusedEl = null;
 
