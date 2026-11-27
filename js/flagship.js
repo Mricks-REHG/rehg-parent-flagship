@@ -1,474 +1,694 @@
-/* ==========================================================================
-   RICKS EXECUTIVE HOSPITALITY GROUP™ — Flagship Interactive Engine (V3)
-   Domain: https://rehgexec.com | Repo: Mricks-REHG/rehg-parent-flagship
-   ========================================================================== */
 (function () {
   "use strict";
 
-  const PRINCIPAL = Object.freeze({
-    name: "Michael Ricks — Founder & CEO",
-    email: "mricks@ricksexecutivehospitalitygroup.com",
-    phone: "404.594.3765",
-    domain: "https://rehgexec.com"
-  });
-
   const CARBON_MODULES = [
     {
-      id: "pos",
+      id: "carbon-pos",
+      badgeSrc: "assets/rehg-carbon-pos-master.jpeg",
+      tag: "PILLAR 01 • FLOOR REGISTER",
       title: "CARBON™ | POS",
-      subtitle: "FRONT-OF-HOUSE & LIVE DEPLETION CORE",
+      subtitle: "Front-of-House Order & Shift Transaction Engine",
       subdomain: "",
-      image: "assets/rehg-carbon-pos-master.jpeg",
-      brief: "Eliminates slow ticket entry, uncontrolled comp/void overrides, and blind back-end depletion during high-volume service. Connects frontline order flow directly into the CARBON™ | POS & Sovereign Portal spine with role-tier PIN governance."
+      brief:
+        "Built for high-movement hospitality rooms where speed, modifier accuracy, and clean shift handoffs matter every minute of service.",
+      points: [
+        "Fast check building across active tables, tabs, and floor sections.",
+        "Structured modifier and prep routing for bar and kitchen stations.",
+        "Clean shift closeout alignment designed for real floor discipline."
+      ]
     },
     {
-      id: "sovereign-portal",
+      id: "carbon-sovereign-portal",
+      badgeSrc: "assets/carbon-sovereign-portal.jpeg",
+      tag: "PILLAR 02 • EXECUTIVE COMMAND",
       title: "CARBON™ | SOVEREIGN PORTAL",
-      subtitle: "OWNER & EXECUTIVE GOVERNANCE SUITE",
+      subtitle: "Owner & Leadership Visibility Hub",
       subdomain: "https://portal.rehgexec.com",
-      image: "assets/carbon-sovereign-portal.jpeg",
-      brief: "Replaces fragmented spreadsheets and delayed end-of-month surprises with a unified owner governance view. Anchors executive oversight across multi-unit operations inside the CARBON™ | POS & Sovereign Portal spine."
+      brief:
+        "Centralizes executive oversight across venues, leadership roles, and daily operational check-ins without spreadsheet sprawl.",
+      points: [
+        "Single executive lens across single-venue and multi-market operations.",
+        "Structured leadership access and clear accountability lanes.",
+        "Direct connection to RICKS EXECUTIVE HOSPITALITY GROUP™ standards."
+      ]
     },
     {
-      id: "digital-footprint",
+      id: "carbon-digital-footprint",
+      badgeSrc: "assets/carbon-web-vip.jpeg",
+      tag: "PILLAR 03 • BRAND & CONVERSION",
       title: "CARBON™ | DIGITAL FOOTPRINT",
-      subtitle: "BRAND AUTHORITY & CONVERSION ARCHITECTURE",
-      subdomain: "https://rehgexec.com",
-      image: "assets/carbon-web-vip.jpeg",
-      brief: "Eliminates disjointed venue presence and leaky guest conversion paths with disciplined brand authority architecture aligned to real table, VIP, and operational demand across the CARBON™ ecosystem."
+      subtitle: "Hospitality Authority & Direct Guest Conversion Architecture",
+      subdomain: "",
+      brief:
+        "Replaces passive digital brochures with purpose-built hospitality conversion architecture aligned to how guests book, inquire, and engage.",
+      points: [
+        "Positioning crafted for upscale venues, dining rooms, and hospitality groups.",
+        "Clear guest pathways built around real hospitality workflows.",
+        "Cohesive visual authority connected to your operational stack."
+      ]
     },
     {
-      id: "bar",
+      id: "carbon-bar",
+      badgeSrc: "assets/carbon-bar-pos.jpeg",
+      tag: "PILLAR 04 • BEVERAGE DISCIPLINE",
       title: "CARBON™ | BAR",
-      subtitle: "POUR GUARDRAIL & BOTTLE DEPLETION SUITE",
+      subtitle: "Well, Pour & Beverage Program Control",
       subdomain: "https://bar.rehgexec.com",
-      image: "assets/carbon-bar-pos.jpeg",
-      brief: "Targets 1:00 AM bar well drift, heavy pours, and untracked spirit depletion while bartenders stay three-deep. Feeds live pour discipline and bottle accountability straight into CARBON™ | POS & Sovereign Portal."
+      brief:
+        "Brings structure to late-night well execution, spirit pours, bottle programs, and beverage accountability when the bar is three-deep.",
+      points: [
+        "Supports tight well standards and repeatable pour discipline.",
+        "Helps leadership spot beverage drift before end-of-month surprises.",
+        "Built for high-volume bars, lounges, and cocktail programs."
+      ]
     },
     {
-      id: "feeder",
+      id: "carbon-feeder",
+      badgeSrc: "assets/carbon-feeder-pos.jpeg",
+      tag: "PILLAR 05 • DEMAND & FLOW",
       title: "CARBON™ | FEEDER",
-      subtitle: "VIP, RESERVATIONS & MARKETING ROI SUITE",
+      subtitle: "Traffic Generation, VIP Flow & Guest Pipeline",
       subdomain: "https://feeder.rehgexec.com",
-      image: "assets/carbon-feeder-pos.jpeg",
-      brief: "Eliminates unmeasured promotional spend and uneven dining/nightlife pacing by tying reservations, VIP flow, and local demand directly to real floor capacity and the CARBON™ | POS & Sovereign Portal spine."
+      brief:
+        "Connects demand generation and pre-shift guest flow directly to venue capacity so marketing effort translates into real covers.",
+      points: [
+        "Aligns promotional momentum with actual floor and table readiness.",
+        "Keeps guest pipeline visibility structured across active markets.",
+        "Supports repeatable booking and VIP coordination habits."
+      ]
     },
     {
-      id: "kitchen",
+      id: "carbon-kitchen",
+      badgeSrc: "assets/carbon-kitchen-pos.jpeg",
+      tag: "PILLAR 06 • CULINARY & BOH",
       title: "CARBON™ | KITCHEN",
-      subtitle: "COGS, RECIPE & PREP DEPLETION SUITE",
+      subtitle: "Back-of-House Pass, Yield & Prep Alignment",
       subdomain: "https://kitchen.rehgexec.com",
-      image: "assets/carbon-kitchen-pos.jpeg",
-      brief: "Stops Friday-night protein trim drift, off-spec prep batches, and pass bottlenecks before food cost erodes margin. Syncs recipe specs and prep depletion with CARBON™ | POS & Sovereign Portal."
+      brief:
+        "Aligns ticket pacing, recipe specs, and prep discipline so back-of-house execution holds steady during peak service waves.",
+      points: [
+        "Focused on pass clarity, prep consistency, and culinary yield.",
+        "Bridges kitchen timing with front-of-house service expectations.",
+        "Designed around practical line realities rather than kitchen clutter."
+      ]
     },
     {
-      id: "loss",
+      id: "carbon-loss",
+      badgeSrc: "assets/carbon-loss-pos.jpeg",
+      tag: "PILLAR 07 • SHRINKAGE & AUDIT",
       title: "CARBON™ | LOSS",
-      subtitle: "C-SUITE AUDIT & SHRINKAGE VAULT",
+      subtitle: "Variance, Shrinkage & Closeout Integrity",
       subdomain: "https://loss.rehgexec.com",
-      image: "assets/carbon-loss-pos.jpeg",
-      brief: "Exposes variance anomalies, drawer/comp exceptions, and reconciliation gaps across shifts before shrinkage compounds. Operates as the forensic audit vault within the CARBON™ | POS & Sovereign Portal spine."
+      brief:
+        "Highlights operational variance, closeout discrepancies, and shrinkage risks early so principals can act with facts rather than assumptions.",
+      points: [
+        "Surfaces anomalies across closeouts, comps, voids, and inventory.",
+        "Encourages disciplined daily verification across management teams.",
+        "Protects hard-earned venue margin across every operating week."
+      ]
     }
   ];
 
-  // ------------------------------------------------------------------------
-  // 0. MOBILE NAVIGATION TOGGLE (<= 820px)
-  // ------------------------------------------------------------------------
-  const mobileToggleBtn = document.getElementById("mobileNavToggleBtn");
-  const mobileNavPanel = document.getElementById("mobileNavPanel");
+  const PRINCIPAL_CONTACT = {
+    name: "Michael Ricks — Founder & CEO",
+    email: "mricks@ricksexecutivehospitalitygroup.com",
+    phone: "404.594.3765"
+  };
 
-  if (mobileToggleBtn && mobileNavPanel) {
-    mobileToggleBtn.addEventListener("click", () => {
-      const expanded = mobileToggleBtn.getAttribute("aria-expanded") === "true";
-      mobileToggleBtn.setAttribute("aria-expanded", String(!expanded));
-      mobileNavPanel.classList.toggle("is-open", !expanded);
+  const state = {
+    activeModuleIndex: 0,
+    lastFocusedEl: null,
+    activeModalId: null
+  };
+
+  const dom = {};
+
+  function cacheDom() {
+    dom.menuToggle = document.getElementById("mobile-menu-toggle");
+    dom.menuDrawer = document.getElementById("mobile-nav-drawer");
+
+    dom.carouselViewport = document.getElementById("carbon-carousel-viewport");
+    dom.carouselTrack = document.getElementById("carbon-carousel-track");
+    dom.carouselDots = document.getElementById("carbon-carousel-dots");
+    dom.carouselCounter = document.getElementById("carousel-counter");
+    dom.prevBtn = document.getElementById("carousel-prev-btn");
+    dom.nextBtn = document.getElementById("carousel-next-btn");
+
+    dom.moduleModal = document.getElementById("carbon-module-modal");
+    dom.moduleModalDialog = dom.moduleModal ? dom.moduleModal.querySelector(".modal-dialog") : null;
+    dom.closeModuleBtn = document.getElementById("close-module-modal-btn");
+    dom.moduleBadgeImg = document.getElementById("module-modal-badge-img");
+    dom.moduleKicker = document.getElementById("module-modal-kicker");
+    dom.moduleTitle = document.getElementById("module-modal-title");
+    dom.moduleSubtitle = document.getElementById("module-modal-subtitle");
+    dom.moduleSubdomainWrap = document.getElementById("module-modal-subdomain-wrap");
+    dom.moduleSubdomainLink = document.getElementById("module-modal-subdomain-link");
+    dom.moduleBrief = document.getElementById("module-modal-brief");
+    dom.modulePoints = document.getElementById("module-modal-points");
+    dom.moduleRequestBtn = document.getElementById("module-request-briefing-btn");
+    dom.modulePrevBtn = document.getElementById("module-prev-btn");
+    dom.moduleNextBtn = document.getElementById("module-next-btn");
+
+    dom.principalModal = document.getElementById("principal-conversation-modal");
+    dom.principalModalDialog = dom.principalModal ? dom.principalModal.querySelector(".modal-dialog") : null;
+    dom.closePrincipalBtn = document.getElementById("close-principal-modal-btn");
+    dom.briefingForm = document.getElementById("principal-briefing-form");
+    dom.callerName = document.getElementById("caller-name");
+    dom.callerEmail = document.getElementById("caller-email");
+    dom.venueGroup = document.getElementById("venue-group");
+    dom.callerPhone = document.getElementById("caller-phone");
+    dom.briefingTopic = document.getElementById("briefing-topic");
+    dom.briefingNotes = document.getElementById("briefing-notes");
+    dom.formStatus = document.getElementById("principal-form-status");
+  }
+
+  /* ------------------------------------------------------------------------
+     MOBILE NAVIGATION DRAWER
+     ------------------------------------------------------------------------ */
+  function setMobileMenuOpen(isOpen) {
+    if (!dom.menuToggle || !dom.menuDrawer) return;
+    dom.menuToggle.setAttribute("aria-expanded", String(isOpen));
+    dom.menuDrawer.hidden = !isOpen;
+  }
+
+  function initMobileMenu() {
+    if (!dom.menuToggle || !dom.menuDrawer) return;
+    setMobileMenuOpen(false);
+
+    dom.menuToggle.addEventListener("click", function () {
+      const currentlyOpen = dom.menuToggle.getAttribute("aria-expanded") === "true";
+      setMobileMenuOpen(!currentlyOpen);
     });
 
-    mobileNavPanel.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileToggleBtn.setAttribute("aria-expanded", "false");
-        mobileNavPanel.classList.remove("is-open");
+    const drawerLinks = dom.menuDrawer.querySelectorAll("a.mobile-nav-link");
+    drawerLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        setMobileMenuOpen(false);
       });
     });
-  }
 
-  // ------------------------------------------------------------------------
-  // 1. SKYLINE CREST SCROLL & HOVER ILLUMINATION OVER OPEN WATER CORRIDOR
-  // ------------------------------------------------------------------------
-  const skylineSection = document.getElementById("coast-to-coast");
-  const waterCrestBtn = document.getElementById("waterCorridorCrest");
-
-  function syncSkylineCrest() {
-    if (!skylineSection) return;
-    const rect = skylineSection.getBoundingClientRect();
-    const vh = window.innerHeight || 900;
-    const progress = Math.min(1, Math.max(0, (vh - rect.top) / (vh + rect.height)));
-    const offsetPx = Math.round((progress - 0.5) * 20);
-    const glow = (0.24 + progress * 0.48).toFixed(2);
-    skylineSection.style.setProperty("--crest-scroll-y", `${offsetPx}px`);
-    skylineSection.style.setProperty("--crest-glow-intensity", glow);
-  }
-
-  window.addEventListener("scroll", syncSkylineCrest, { passive: true });
-  syncSkylineCrest();
-
-  if (waterCrestBtn) {
-    waterCrestBtn.addEventListener("click", () => {
-      const target = document.getElementById("carbon-suite");
-      if (target) target.scrollIntoView({ behavior: "smooth" });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 1080) {
+        setMobileMenuOpen(false);
+      }
     });
   }
 
-  // ------------------------------------------------------------------------
-  // 2. CARBON™ ECOSYSTEM HORIZONTAL CAROUSEL (ARROWS, DOTS, DRAG, WHEEL)
-  // ------------------------------------------------------------------------
-  const trackEl = document.getElementById("carbonCarouselTrack");
-  const dotsContainer = document.getElementById("carbonCarouselDots");
-  const prevArrow = document.getElementById("carouselPrevArrow");
-  const nextArrow = document.getElementById("carouselNextArrow");
-
-  let activeModuleIdx = 0;
-  let lastFocusTrigger = null;
-
+  /* ------------------------------------------------------------------------
+     CARBON™ HORIZONTAL CAROUSEL (ARROWS, DOTS, DRAG, WHEEL)
+     ------------------------------------------------------------------------ */
   function renderCarouselSlides() {
-    if (!trackEl || !dotsContainer) return;
-    trackEl.innerHTML = "";
-    dotsContainer.innerHTML = "";
+    if (!dom.carouselTrack || !dom.carouselDots) return;
 
-    CARBON_MODULES.forEach((mod, idx) => {
-      const card = document.createElement("button");
-      card.type = "button";
+    dom.carouselTrack.innerHTML = "";
+    dom.carouselDots.innerHTML = "";
+
+    CARBON_MODULES.forEach(function (mod, idx) {
+      const card = document.createElement("article");
       card.className = "carbon-slide-card";
-      card.setAttribute("aria-label", `Inspect ${mod.title} architecture`);
-      card.innerHTML = `
-        <span class="carbon-badge-frame">
-          <img src="${mod.image}" alt="${mod.title} official badge" loading="lazy" />
-        </span>
-        <span class="carbon-card-title">${mod.title}</span>
-        <span class="carbon-card-sub">${mod.subtitle}</span>
-        <span class="carbon-inspect-link">Inspect Architecture &rarr;</span>
-      `;
-      card.addEventListener("click", (e) => {
-        if (trackEl.dataset.dragged === "true") {
-          e.preventDefault();
+      card.setAttribute("role", "group");
+      card.setAttribute("aria-label", mod.title);
+      card.dataset.moduleIndex = String(idx);
+
+      const well = document.createElement("div");
+      well.className = "badge-contain-well";
+
+      const img = document.createElement("img");
+      img.src = mod.badgeSrc;
+      img.alt = mod.title + " Badge";
+      img.className = "badge-contain-img";
+      img.loading = idx < 3 ? "eager" : "lazy";
+      well.appendChild(img);
+
+      const copyBlock = document.createElement("div");
+
+      const tagEl = document.createElement("div");
+      tagEl.className = "slide-tag";
+      tagEl.textContent = mod.tag;
+
+      const titleEl = document.createElement("h3");
+      titleEl.className = "slide-title";
+      titleEl.textContent = mod.title;
+
+      const subEl = document.createElement("div");
+      subEl.className = "slide-subtitle";
+      subEl.textContent = mod.subtitle;
+
+      const briefEl = document.createElement("p");
+      briefEl.className = "slide-summary";
+      briefEl.textContent = mod.brief;
+
+      copyBlock.appendChild(tagEl);
+      copyBlock.appendChild(titleEl);
+      copyBlock.appendChild(subEl);
+      copyBlock.appendChild(briefEl);
+
+      const metaBar = document.createElement("div");
+      metaBar.className = "slide-footer-meta";
+
+      const leftMeta = document.createElement("span");
+      leftMeta.textContent = mod.subdomain
+        ? mod.subdomain.replace("https://", "")
+        : "RICKS EXECUTIVE HOSPITALITY GROUP™";
+
+      const rightCue = document.createElement("span");
+      rightCue.className = "slide-inspect-cue";
+      rightCue.textContent = "Inspect Module →";
+
+      metaBar.appendChild(leftMeta);
+      metaBar.appendChild(rightCue);
+
+      const topGroup = document.createElement("div");
+      topGroup.appendChild(well);
+      topGroup.appendChild(copyBlock);
+
+      card.appendChild(topGroup);
+      card.appendChild(metaBar);
+
+      card.addEventListener("click", function () {
+        if (dom.carouselViewport && dom.carouselViewport.dataset.justDragged === "true") {
           return;
         }
         openModuleModal(idx, card);
       });
-      trackEl.appendChild(card);
+
+      dom.carouselTrack.appendChild(card);
 
       const dot = document.createElement("button");
       dot.type = "button";
-      dot.className = idx === 0 ? "carousel-dot-btn is-active" : "carousel-dot-btn";
-      dot.setAttribute("aria-label", `Jump to ${mod.title}`);
-      dot.addEventListener("click", () => {
-        scrollTrackToIndex(idx);
+      dot.className = "carousel-dot-btn" + (idx === 0 ? " is-active" : "");
+      dot.setAttribute("aria-label", "Go to " + mod.title);
+      dot.addEventListener("click", function () {
+        goToSlide(idx);
       });
-      dotsContainer.appendChild(dot);
+      dom.carouselDots.appendChild(dot);
     });
 
-    updateActiveDot();
+    updateCarouselUI(0);
   }
 
-  function getSlideStep() {
-    if (!trackEl) return 306;
-    const card = trackEl.querySelector(".carbon-slide-card");
-    if (!card) return 306;
-    return card.getBoundingClientRect().width + 20;
-  }
-
-  function scrollTrackToIndex(index) {
-    if (!trackEl) return;
-    const clamped = Math.max(0, Math.min(CARBON_MODULES.length - 1, index));
-    trackEl.scrollTo({
-      left: clamped * getSlideStep(),
-      behavior: "smooth"
-    });
-  }
-
-  function updateActiveDot() {
-    if (!trackEl || !dotsContainer) return;
-    const step = getSlideStep();
-    const currentIdx = Math.min(
-      CARBON_MODULES.length - 1,
-      Math.max(0, Math.round(trackEl.scrollLeft / Math.max(1, step)))
-    );
-    const dots = dotsContainer.querySelectorAll(".carousel-dot-btn");
-    dots.forEach((d, idx) => d.classList.toggle("is-active", idx === currentIdx));
-  }
-
-  if (prevArrow) {
-    prevArrow.addEventListener("click", () => {
-      if (!trackEl) return;
-      trackEl.scrollBy({ left: -getSlideStep(), behavior: "smooth" });
-    });
-  }
-
-  if (nextArrow) {
-    nextArrow.addEventListener("click", () => {
-      if (!trackEl) return;
-      trackEl.scrollBy({ left: getSlideStep(), behavior: "smooth" });
-    });
-  }
-
-  if (trackEl) {
-    trackEl.addEventListener("scroll", updateActiveDot, { passive: true });
-
-    trackEl.addEventListener(
-      "wheel",
-      (e) => {
-        if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && trackEl.scrollWidth > trackEl.clientWidth) {
-          e.preventDefault();
-          trackEl.scrollLeft += e.deltaY;
-        }
-      },
-      { passive: false }
-    );
-
-    let pointerDown = false;
-    let pointerStartX = 0;
-    let pointerStartScroll = 0;
-
-    trackEl.addEventListener("pointerdown", (e) => {
-      if (e.pointerType !== "mouse") return;
-      pointerDown = true;
-      pointerStartX = e.pageX;
-      pointerStartScroll = trackEl.scrollLeft;
-      trackEl.dataset.dragged = "false";
-      trackEl.classList.add("is-dragging");
-    });
-
-    window.addEventListener("pointermove", (e) => {
-      if (!pointerDown || !trackEl) return;
-      const delta = e.pageX - pointerStartX;
-      if (Math.abs(delta) > 6) {
-        trackEl.dataset.dragged = "true";
-      }
-      trackEl.scrollLeft = pointerStartScroll - delta * 1.15;
-    });
-
-    window.addEventListener("pointerup", () => {
-      if (!pointerDown || !trackEl) return;
-      pointerDown = false;
-      trackEl.classList.remove("is-dragging");
-      setTimeout(() => {
-        if (trackEl) trackEl.dataset.dragged = "false";
-      }, 45);
-    });
-  }
-
-  // ------------------------------------------------------------------------
-  // 3. CARBON™ MODULE POP-OUT MODAL & PRINCIPAL CONVERSATION MODAL
-  // ------------------------------------------------------------------------
-  const moduleBackdrop = document.getElementById("moduleModalBackdrop");
-  const moduleCloseBtn = document.getElementById("moduleModalClose");
-  const moduleTitleEl = document.getElementById("moduleModalTitle");
-  const moduleImgEl = document.getElementById("moduleModalImg");
-  const moduleSubEl = document.getElementById("moduleModalSub");
-  const moduleEndpointWrap = document.getElementById("moduleModalEndpointWrap");
-  const moduleSubdomainEl = document.getElementById("moduleModalSubdomain");
-  const moduleBriefEl = document.getElementById("moduleModalBrief");
-  const modulePrevBtn = document.getElementById("moduleModalPrev");
-  const moduleNextBtn = document.getElementById("moduleModalNext");
-  const moduleBriefingCta = document.getElementById("moduleRequestBriefingBtn");
-
-  const principalBackdrop = document.getElementById("principalModalBackdrop");
-  const principalCloseBtn = document.getElementById("principalModalClose");
-  const principalForm = document.getElementById("principalForm");
-  const principalTopicField = document.getElementById("principalTopicInput");
-  const principalFeedbackEl = document.getElementById("principalFeedback");
-
-  function syncBodyScrollLock() {
-    const anyOpen =
-      (moduleBackdrop && moduleBackdrop.classList.contains("is-open")) ||
-      (principalBackdrop && principalBackdrop.classList.contains("is-open"));
-    document.body.classList.toggle("modal-locked", Boolean(anyOpen));
-  }
-
-  function renderModuleModal(index) {
-    const mod = CARBON_MODULES[index];
-    if (!mod) return;
-    activeModuleIdx = index;
-
-    if (moduleTitleEl) moduleTitleEl.textContent = mod.title;
-    if (moduleImgEl) {
-      moduleImgEl.src = mod.image;
-      moduleImgEl.alt = `${mod.title} badge artwork`;
+  function updateCarouselUI(activeIdx) {
+    state.activeModuleIndex = activeIdx;
+    const total = CARBON_MODULES.length;
+    if (dom.carouselCounter) {
+      const num = String(activeIdx + 1).padStart(2, "0");
+      const tot = String(total).padStart(2, "0");
+      dom.carouselCounter.textContent = "Module " + num + " of " + tot + " • " + CARBON_MODULES[activeIdx].title;
     }
-    if (moduleSubEl) moduleSubEl.textContent = mod.subtitle;
 
-    if (moduleSubdomainEl && moduleEndpointWrap) {
-      if (mod.subdomain && mod.subdomain.startsWith("https://")) {
-        moduleSubdomainEl.href = mod.subdomain;
-        moduleSubdomainEl.textContent = mod.subdomain.replace(/^https:\/\//, "");
-        moduleEndpointWrap.style.display = "block";
+    if (dom.carouselDots) {
+      const dots = dom.carouselDots.querySelectorAll(".carousel-dot-btn");
+      dots.forEach(function (d, i) {
+        d.classList.toggle("is-active", i === activeIdx);
+      });
+    }
+  }
+
+  function goToSlide(targetIdx) {
+    const total = CARBON_MODULES.length;
+    const wrapped = ((targetIdx % total) + total) % total;
+    updateCarouselUI(wrapped);
+
+    if (!dom.carouselViewport || !dom.carouselTrack) return;
+    const cards = dom.carouselTrack.querySelectorAll(".carbon-slide-card");
+    const targetCard = cards[wrapped];
+    if (targetCard) {
+      dom.carouselViewport.scrollTo({
+        left: targetCard.offsetLeft - dom.carouselTrack.offsetLeft,
+        behavior: "smooth"
+      });
+    }
+  }
+
+  function stepCarousel(delta) {
+    goToSlide(state.activeModuleIndex + delta);
+  }
+
+  function syncActiveSlideFromScroll() {
+    if (!dom.carouselViewport || !dom.carouselTrack) return;
+    const cards = dom.carouselTrack.querySelectorAll(".carbon-slide-card");
+    if (!cards.length) return;
+
+    const currentScroll = dom.carouselViewport.scrollLeft;
+    let closestIdx = 0;
+    let smallestDiff = Infinity;
+
+    cards.forEach(function (card, idx) {
+      const cardLeft = card.offsetLeft - dom.carouselTrack.offsetLeft;
+      const diff = Math.abs(cardLeft - currentScroll);
+      if (diff < smallestDiff) {
+        smallestDiff = diff;
+        closestIdx = idx;
+      }
+    });
+
+    updateCarouselUI(closestIdx);
+  }
+
+  function initCarouselInteractions() {
+    if (!dom.carouselViewport) return;
+
+    if (dom.prevBtn) {
+      dom.prevBtn.addEventListener("click", function () {
+        stepCarousel(-1);
+      });
+    }
+
+    if (dom.nextBtn) {
+      dom.nextBtn.addEventListener("click", function () {
+        stepCarousel(1);
+      });
+    }
+
+    let scrollTimer = null;
+    dom.carouselViewport.addEventListener("scroll", function () {
+      window.clearTimeout(scrollTimer);
+      scrollTimer = window.setTimeout(syncActiveSlideFromScroll, 80);
+    }, { passive: true });
+
+    // Translate vertical mouse wheel over horizontal carousel into horizontal scroll
+    dom.carouselViewport.addEventListener("wheel", function (e) {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        dom.carouselViewport.scrollLeft += e.deltaY;
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    // Pointer / drag support
+    let isPointerDown = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let movedDistance = 0;
+
+    dom.carouselViewport.addEventListener("pointerdown", function (e) {
+      if (e.pointerType === "mouse" && e.button !== 0) return;
+      isPointerDown = true;
+      movedDistance = 0;
+      startX = e.clientX;
+      startScrollLeft = dom.carouselViewport.scrollLeft;
+      dom.carouselViewport.classList.add("is-dragging");
+      dom.carouselViewport.dataset.justDragged = "false";
+    });
+
+    window.addEventListener("pointermove", function (e) {
+      if (!isPointerDown || !dom.carouselViewport) return;
+      const dx = e.clientX - startX;
+      movedDistance = Math.max(movedDistance, Math.abs(dx));
+      dom.carouselViewport.scrollLeft = startScrollLeft - dx;
+    });
+
+    window.addEventListener("pointerup", function () {
+      if (!isPointerDown || !dom.carouselViewport) return;
+      isPointerDown = false;
+      dom.carouselViewport.classList.remove("is-dragging");
+      if (movedDistance > 8) {
+        dom.carouselViewport.dataset.justDragged = "true";
+        window.setTimeout(function () {
+          if (dom.carouselViewport) {
+            dom.carouselViewport.dataset.justDragged = "false";
+          }
+        }, 60);
+        syncActiveSlideFromScroll();
+      }
+    });
+  }
+
+  /* ------------------------------------------------------------------------
+     MODAL MANAGEMENT (CARBON™ MODULE MODAL & PRINCIPAL CONVERSATION MODAL)
+     ------------------------------------------------------------------------ */
+  function hideAllModals() {
+    if (dom.moduleModal) {
+      dom.moduleModal.style.display = "none";
+    }
+    if (dom.principalModal) {
+      dom.principalModal.style.display = "none";
+    }
+    state.activeModalId = null;
+    document.body.classList.remove("modal-open");
+
+    if (state.lastFocusedEl && typeof state.lastFocusedEl.focus === "function") {
+      const target = state.lastFocusedEl;
+      state.lastFocusedEl = null;
+      window.setTimeout(function () {
+        target.focus();
+      }, 0);
+    }
+  }
+
+  function populateModuleModal(index) {
+    const total = CARBON_MODULES.length;
+    const idx = ((index % total) + total) % total;
+    const mod = CARBON_MODULES[idx];
+    state.activeModuleIndex = idx;
+
+    if (dom.moduleBadgeImg) {
+      dom.moduleBadgeImg.src = mod.badgeSrc;
+      dom.moduleBadgeImg.alt = mod.title + " Emblem";
+    }
+    if (dom.moduleKicker) {
+      dom.moduleKicker.textContent = mod.tag;
+    }
+    if (dom.moduleTitle) {
+      dom.moduleTitle.textContent = mod.title;
+    }
+    if (dom.moduleSubtitle) {
+      dom.moduleSubtitle.textContent = mod.subtitle;
+    }
+    if (dom.moduleBrief) {
+      dom.moduleBrief.textContent = mod.brief;
+    }
+
+    if (dom.moduleSubdomainWrap && dom.moduleSubdomainLink) {
+      if (mod.subdomain) {
+        dom.moduleSubdomainWrap.style.display = "flex";
+        dom.moduleSubdomainLink.href = mod.subdomain;
+        dom.moduleSubdomainLink.textContent = mod.subdomain;
       } else {
-        moduleSubdomainEl.removeAttribute("href");
-        moduleSubdomainEl.textContent = "";
-        moduleEndpointWrap.style.display = "none";
+        dom.moduleSubdomainWrap.style.display = "none";
+        dom.moduleSubdomainLink.href = "https://rehgexec.com";
+        dom.moduleSubdomainLink.textContent = "";
       }
     }
 
-    if (moduleBriefEl) moduleBriefEl.textContent = mod.brief;
-    if (moduleBriefingCta) {
-      moduleBriefingCta.setAttribute("data-topic", `Principal Briefing — ${mod.title}`);
+    if (dom.modulePoints) {
+      dom.modulePoints.innerHTML = "";
+      mod.points.forEach(function (pt) {
+        const li = document.createElement("li");
+        li.textContent = pt;
+        dom.modulePoints.appendChild(li);
+      });
     }
+
+    updateCarouselUI(idx);
   }
 
   function openModuleModal(index, triggerEl) {
-    if (triggerEl) lastFocusTrigger = triggerEl;
-    if (principalBackdrop) principalBackdrop.classList.remove("is-open");
-    renderModuleModal(index);
-    if (moduleBackdrop) {
-      moduleBackdrop.classList.add("is-open");
-      moduleBackdrop.setAttribute("aria-hidden", "false");
+    if (!dom.moduleModal) return;
+    if (triggerEl) {
+      state.lastFocusedEl = triggerEl;
+    } else if (!state.activeModalId) {
+      state.lastFocusedEl = document.activeElement;
     }
-    syncBodyScrollLock();
-    if (moduleCloseBtn) moduleCloseBtn.focus();
-  }
 
-  function closeModuleModal(restoreFocus = true) {
-    if (moduleBackdrop) {
-      moduleBackdrop.classList.remove("is-open");
-      moduleBackdrop.setAttribute("aria-hidden", "true");
+    if (dom.principalModal) {
+      dom.principalModal.style.display = "none";
     }
-    syncBodyScrollLock();
-    if (restoreFocus && lastFocusTrigger && typeof lastFocusTrigger.focus === "function") {
-      lastFocusTrigger.focus();
-    }
-  }
 
-  function openPrincipalModal(topic = "", triggerEl = null) {
-    if (triggerEl) lastFocusTrigger = triggerEl;
-    if (moduleBackdrop) {
-      moduleBackdrop.classList.remove("is-open");
-      moduleBackdrop.setAttribute("aria-hidden", "true");
-    }
-    if (principalTopicField) {
-      principalTopicField.value = topic || "Principal Conversation — RICKS EXECUTIVE HOSPITALITY GROUP™";
-    }
-    if (principalFeedbackEl) principalFeedbackEl.textContent = "";
-    if (principalBackdrop) {
-      principalBackdrop.classList.add("is-open");
-      principalBackdrop.setAttribute("aria-hidden", "false");
-    }
-    syncBodyScrollLock();
-    const nameInput = document.getElementById("principalNameInput");
-    if (nameInput) nameInput.focus();
-  }
+    populateModuleModal(index);
+    dom.moduleModal.style.display = "flex";
+    state.activeModalId = "carbon-module-modal";
+    document.body.classList.add("modal-open");
 
-  function closePrincipalModal(restoreFocus = true) {
-    if (principalBackdrop) {
-      principalBackdrop.classList.remove("is-open");
-      principalBackdrop.setAttribute("aria-hidden", "true");
-    }
-    syncBodyScrollLock();
-    if (restoreFocus && lastFocusTrigger && typeof lastFocusTrigger.focus === "function") {
-      lastFocusTrigger.focus();
+    if (dom.moduleModalDialog) {
+      dom.moduleModalDialog.scrollTop = 0;
+      dom.moduleModalDialog.focus();
     }
   }
 
-  if (modulePrevBtn) {
-    modulePrevBtn.addEventListener("click", () => {
-      const prevIdx = (activeModuleIdx - 1 + CARBON_MODULES.length) % CARBON_MODULES.length;
-      renderModuleModal(prevIdx);
+  function openPrincipalModal(topicLabel, triggerEl) {
+    if (!dom.principalModal) return;
+    if (triggerEl) {
+      state.lastFocusedEl = triggerEl;
+    } else if (!state.activeModalId) {
+      state.lastFocusedEl = document.activeElement;
+    }
+
+    if (dom.moduleModal) {
+      dom.moduleModal.style.display = "none";
+    }
+
+    if (dom.briefingTopic) {
+      dom.briefingTopic.value = topicLabel || "Principal Conversation — RICKS EXECUTIVE HOSPITALITY GROUP™";
+    }
+    if (dom.formStatus) {
+      dom.formStatus.textContent = "";
+    }
+
+    dom.principalModal.style.display = "flex";
+    state.activeModalId = "principal-conversation-modal";
+    document.body.classList.add("modal-open");
+
+    if (dom.principalModalDialog) {
+      dom.principalModalDialog.scrollTop = 0;
+      dom.principalModalDialog.focus();
+    }
+
+    window.setTimeout(function () {
+      if (dom.callerName && !dom.callerName.value.trim()) {
+        dom.callerName.focus();
+      }
+    }, 30);
+  }
+
+  function buildBriefingMailtoUrl() {
+    const senderName = dom.callerName ? dom.callerName.value.trim() : "";
+    const senderEmail = dom.callerEmail ? dom.callerEmail.value.trim() : "";
+    const venue = dom.venueGroup ? dom.venueGroup.value.trim() : "";
+    const phone = dom.callerPhone ? dom.callerPhone.value.trim() : "";
+    const topic = dom.briefingTopic ? dom.briefingTopic.value.trim() : "";
+    const notes = dom.briefingNotes ? dom.briefingNotes.value.trim() : "";
+
+    const subject = "Principal Briefing Request: " + (topic || "RICKS EXECUTIVE HOSPITALITY GROUP™");
+
+    const lines = [
+      "Hello Michael,",
+      "",
+      "I would like to request a principal conversation with RICKS EXECUTIVE HOSPITALITY GROUP™.",
+      "",
+      "Topic / Focus: " + (topic || "General Principal Conversation"),
+      "Name: " + senderName,
+      "Email: " + senderEmail,
+      "Phone: " + (phone || "Not provided"),
+      "Venue / Group: " + (venue || "Not provided"),
+      "",
+      "Operational Context:",
+      notes || "Looking to connect regarding hospitality operations and CARBON™ capabilities.",
+      "",
+      "Sent via https://rehgexec.com"
+    ];
+
+    return (
+      "mailto:" +
+      encodeURIComponent(PRINCIPAL_CONTACT.email) +
+      "?subject=" +
+      encodeURIComponent(subject) +
+      "&body=" +
+      encodeURIComponent(lines.join("\n"))
+    );
+  }
+
+  function initModalsAndForms() {
+    // Ensure modals start strictly hidden on initial load
+    hideAllModals();
+    state.lastFocusedEl = null;
+
+    const principalTriggers = document.querySelectorAll("[data-open-principal]");
+    principalTriggers.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        setMobileMenuOpen(false);
+        const label = btn.getAttribute("data-open-principal") || "Principal Conversation";
+        openPrincipalModal(label, btn);
+      });
     });
-  }
 
-  if (moduleNextBtn) {
-    moduleNextBtn.addEventListener("click", () => {
-      const nextIdx = (activeModuleIdx + 1) % CARBON_MODULES.length;
-      renderModuleModal(nextIdx);
-    });
-  }
-
-  if (moduleCloseBtn) {
-    moduleCloseBtn.addEventListener("click", () => closeModuleModal(true));
-  }
-
-  if (moduleBackdrop) {
-    moduleBackdrop.addEventListener("click", (e) => {
-      if (e.target === moduleBackdrop) closeModuleModal(true);
-    });
-  }
-
-  document.querySelectorAll("[data-open-principal]").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const topic = btn.getAttribute("data-topic") || "";
-      openPrincipalModal(topic, btn);
-    });
-  });
-
-  if (principalCloseBtn) {
-    principalCloseBtn.addEventListener("click", () => closePrincipalModal(true));
-  }
-
-  if (principalBackdrop) {
-    principalBackdrop.addEventListener("click", (e) => {
-      if (e.target === principalBackdrop) closePrincipalModal(true);
-    });
-  }
-
-  document.addEventListener("keydown", (e) => {
-    const isModOpen = moduleBackdrop && moduleBackdrop.classList.contains("is-open");
-    const isPrinOpen = principalBackdrop && principalBackdrop.classList.contains("is-open");
-
-    if (e.key === "Escape") {
-      if (isModOpen) closeModuleModal(true);
-      if (isPrinOpen) closePrincipalModal(true);
-      return;
+    if (dom.closeModuleBtn) {
+      dom.closeModuleBtn.addEventListener("click", hideAllModals);
     }
 
-    if (isModOpen && e.key === "ArrowLeft") {
-      e.preventDefault();
-      const prevIdx = (activeModuleIdx - 1 + CARBON_MODULES.length) % CARBON_MODULES.length;
-      renderModuleModal(prevIdx);
-    } else if (isModOpen && e.key === "ArrowRight") {
-      e.preventDefault();
-      const nextIdx = (activeModuleIdx + 1) % CARBON_MODULES.length;
-      renderModuleModal(nextIdx);
+    if (dom.closePrincipalBtn) {
+      dom.closePrincipalBtn.addEventListener("click", hideAllModals);
     }
-  });
 
-  if (principalForm) {
-    principalForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const nameVal = (document.getElementById("principalNameInput")?.value || "").trim();
-      const emailVal = (document.getElementById("principalEmailInput")?.value || "").trim();
-      const orgVal = (document.getElementById("principalOrgInput")?.value || "").trim();
-      const notesVal = (document.getElementById("principalNotesInput")?.value || "").trim();
-      const topicVal = (principalTopicField?.value || "Principal Conversation").trim();
-
-      if (!nameVal || !emailVal) {
-        if (principalFeedbackEl) {
-          principalFeedbackEl.textContent = "Please enter your name and work email address.";
+    if (dom.moduleModal) {
+      dom.moduleModal.addEventListener("click", function (e) {
+        if (e.target === dom.moduleModal) {
+          hideAllModals();
         }
-        return;
-      }
+      });
+    }
 
-      const subject = encodeURIComponent(`${topicVal} — ${orgVal || nameVal}`);
-      const bodyLines = [
-        `Executive Briefing Request: ${topicVal}`,
-        `Contact: ${nameVal}`,
-        `Work Email: ${emailVal}`,
-        orgVal ? `Organization / Venues: ${orgVal}` : "",
-        notesVal ? `\nOperational Context:\n${notesVal}` : ""
-      ].filter(Boolean);
+    if (dom.principalModal) {
+      dom.principalModal.addEventListener("click", function (e) {
+        if (e.target === dom.principalModal) {
+          hideAllModals();
+        }
+      });
+    }
 
-      const mailtoHref = `mailto:${PRINCIPAL.email}?subject=${subject}&body=${encodeURIComponent(bodyLines.join("\\n"))}`;
+    if (dom.modulePrevBtn) {
+      dom.modulePrevBtn.addEventListener("click", function () {
+        populateModuleModal(state.activeModuleIndex - 1);
+      });
+    }
 
-      if (principalFeedbackEl) {
-        principalFeedbackEl.textContent = `Formatted dispatch for ${PRINCIPAL.email} (${PRINCIPAL.phone}). Opening mail client...`;
-      }
+    if (dom.moduleNextBtn) {
+      dom.moduleNextBtn.addEventListener("click", function () {
+        populateModuleModal(state.activeModuleIndex + 1);
+      });
+    }
 
-      try {
-        window.location.href = mailtoHref;
-      } catch (_err) {
-        // Keep feedback visible in restricted preview environments
+    if (dom.moduleRequestBtn) {
+      dom.moduleRequestBtn.addEventListener("click", function () {
+        const currentMod = CARBON_MODULES[state.activeModuleIndex];
+        const topic = currentMod ? currentMod.title + " Briefing" : "CARBON™ Suite Briefing";
+        openPrincipalModal(topic, dom.moduleRequestBtn);
+      });
+    }
+
+    if (dom.briefingForm) {
+      dom.briefingForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const nameVal = dom.callerName ? dom.callerName.value.trim() : "";
+        const emailVal = dom.callerEmail ? dom.callerEmail.value.trim() : "";
+        const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
+
+        if (!nameVal) {
+          if (dom.formStatus) {
+            dom.formStatus.textContent = "Please enter your name before composing the dispatch.";
+          }
+          if (dom.callerName) dom.callerName.focus();
+          return;
+        }
+
+        if (!emailValid) {
+          if (dom.formStatus) {
+            dom.formStatus.textContent = "Please enter a valid email address so Michael can follow up directly.";
+          }
+          if (dom.callerEmail) dom.callerEmail.focus();
+          return;
+        }
+
+        const mailtoUrl = buildBriefingMailtoUrl();
+        if (dom.formStatus) {
+          dom.formStatus.textContent =
+            "Opening your email client addressed to " +
+            PRINCIPAL_CONTACT.email +
+            " (" +
+            PRINCIPAL_CONTACT.phone +
+            ")...";
+        }
+        window.location.href = mailtoUrl;
+      });
+    }
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        if (state.activeModalId) {
+          hideAllModals();
+        } else if (dom.menuToggle && dom.menuToggle.getAttribute("aria-expanded") === "true") {
+          setMobileMenuOpen(false);
+          dom.menuToggle.focus();
+        }
       }
     });
   }
 
-  renderCarouselSlides();
+  document.addEventListener("DOMContentLoaded", function () {
+    cacheDom();
+    initMobileMenu();
+    renderCarouselSlides();
+    initCarouselInteractions();
+    initModalsAndForms();
+  });
 })();
