@@ -10,11 +10,11 @@
       subtitle: "Owner & C-Suite Governance Hub",
       subdomain: "https://portal.rehgexec.com",
       brief:
-        "Built so an independent owner can lock their back door tonight without needing a six-figure enterprise IT team—surfacing variance in real time instead of 45 days later in a CPA's post-mortem.",
+        "An operator's real-life answer to the blind spots ordinary tech failed to close—built so an independent owner can lock their back door tonight without needing a six-figure enterprise IT team.",
       points: [
-        "Actual-vs.-theoretical visibility and blind drop-slot separation of duties.",
-        "Fuses immutable bedrock accounting principles with the surgical speed of Gemini AI.",
-        "Clear C-Suite oversight across single-venue and multi-market operations."
+        "Surfaces variance in real time instead of 45 days later in a CPA's post-mortem.",
+        "Anchored on actual-vs.-theoretical depletion, blind drop-slot separation of duties, and prime-cost ceilings.",
+        "Fuses immutable bedrock accounting principles with the surgical speed of Gemini AI."
       ]
     },
     {
@@ -25,11 +25,11 @@
       subtitle: "Self-Deployed Operational Engine Architecture",
       subdomain: "",
       brief:
-        "An operator's real-life answer to the blind spots ordinary tech failed to close—connecting empirical floor execution, prime-cost ceilings, and executive oversight.",
+        "Built so an independent owner can lock their back door tonight without needing a six-figure enterprise IT team—connecting empirical floor execution, prime-cost ceilings, and C-Suite governance.",
       points: [
-        "Self-deployed operational engines engineered for independent and multi-unit operators.",
-        "Anchored on prime-cost ceilings and real-time operational accountability.",
-        "Built from lived floor pressure rather than theoretical dashboards."
+        "Self-deployed operational engines engineered from real floor reality.",
+        "Protects prime-cost ceilings and shift accountability without enterprise IT overhead.",
+        "Built for single flagships and multi-market hospitality groups."
       ]
     },
     {
@@ -40,11 +40,11 @@
       subtitle: "Well, Pour & Beverage Program Control",
       subdomain: "https://bar.rehgexec.com",
       brief:
-        "Protects late-night well economics, spirit pours, and bottle discipline when service is three-deep—exposing pour drift before margins erode.",
+        "Brings real-time actual-vs.-theoretical beverage accountability to well pours, modifiers, and bottle discipline so late-night volume never bleeds margin unnoticed.",
       points: [
-        "Actual-vs.-theoretical beverage accountability across active bar wells.",
-        "Helps catch modifier drift, heavy pours, and par gaps in real time.",
-        "Built for high-volume bars, lounges, and cocktail programs."
+        "Exposes pour and modifier variance in real time rather than 45 days later.",
+        "Supports tight well standards across high-volume bar and lounge shifts.",
+        "Built for operators who refuse to bleed beverage margin in the dark."
       ]
     },
     {
@@ -55,11 +55,11 @@
       subtitle: "Traffic Generation, VIP Flow & Guest Pipeline",
       subdomain: "https://feeder.rehgexec.com",
       brief:
-        "Connects demand generation and pre-shift guest flow directly to floor capacity so hospitality marketing turns into verified covers.",
+        "Connects regional feeder-city demand capture and pre-shift VIP flow directly to venue capacity so high-intent guests reach your floor efficiently.",
       points: [
-        "Aligns guest acquisition and VIP arrival flow with venue readiness.",
-        "Structured visibility across active hospitality markets and corridors.",
-        "Supports consistent pre-shift coordination from front door to floor."
+        "Aligns guest acquisition and VIP flow with real venue capacity.",
+        "Supports regional corridor capture without agency guesswork.",
+        "Connects pre-shift demand to disciplined floor execution."
       ]
     },
     {
@@ -70,11 +70,11 @@
       subtitle: "Back-of-House Pass, Yield & Prep Alignment",
       subdomain: "https://kitchen.rehgexec.com",
       brief:
-        "Aligns ticket pacing, recipe specs, and prep yields so back-of-house execution holds steady during peak service without end-of-month surprises.",
+        "Locks culinary yield discipline, prep standards, and pass pacing to prime-cost ceilings so back-of-house margin holds during peak service.",
       points: [
-        "Tracks culinary yield discipline, prep flow, and pass consistency.",
-        "Supports prime-cost awareness across every kitchen station.",
-        "Designed for practical line speed without back-office lag."
+        "Aligns prep yield and actual-vs.-theoretical food cost on every shift.",
+        "Supports clean kitchen-to-pass pacing under heavy ticket volume.",
+        "Surfaces culinary margin drift early before it compounds."
       ]
     },
     {
@@ -85,11 +85,11 @@
       subtitle: "Variance, Shrinkage & Closeout Integrity",
       subdomain: "https://loss.rehgexec.com",
       brief:
-        "Surfaces closeout discrepancies, comps, voids, and inventory variance early—enforcing blind drop-slot separation of duties and real-time audit clarity.",
+        "Enforces blind drop-slot separation of duties, closeout verification, and shrinkage controls so variance is caught immediately—not in a CPA post-mortem.",
       points: [
-        "Flags variance across closeouts, adjustments, and physical counts.",
-        "Reinforces blind drop-slot separation of duties at shift end.",
-        "Protects venue profit before variance compounds over weeks."
+        "Reconciles closeouts, comps, voids, and physical counts with discipline.",
+        "Reinforces blind drop-slot separation of duties across shifts.",
+        "Protects cash and inventory integrity across every operating lane."
       ]
     }
   ];
@@ -113,7 +113,6 @@
     dom.menuToggle = document.getElementById("mobile-menu-toggle");
     dom.menuDrawer = document.getElementById("mobile-nav-drawer");
 
-    // Shift reality carousel
     dom.realityViewport = document.getElementById("reality-carousel-viewport");
     dom.realityTrack = document.getElementById("reality-carousel-track");
     dom.realityDots = document.getElementById("reality-carousel-dots");
@@ -121,7 +120,6 @@
     dom.realityPrevBtn = document.getElementById("reality-prev-btn");
     dom.realityNextBtn = document.getElementById("reality-next-btn");
 
-    // CARBON™ suite carousel
     dom.carouselViewport = document.getElementById("carbon-carousel-viewport");
     dom.carouselTrack = document.getElementById("carbon-carousel-track");
     dom.carouselDots = document.getElementById("carbon-carousel-dots");
@@ -129,7 +127,6 @@
     dom.prevBtn = document.getElementById("carousel-prev-btn");
     dom.nextBtn = document.getElementById("carousel-next-btn");
 
-    // Modals
     dom.moduleModal = document.getElementById("carbon-module-modal");
     dom.moduleModalDialog = dom.moduleModal ? dom.moduleModal.querySelector(".modal-dialog") : null;
     dom.closeModuleBtn = document.getElementById("close-module-modal-btn");
@@ -158,9 +155,6 @@
     dom.formStatus = document.getElementById("principal-form-status");
   }
 
-  /* ------------------------------------------------------------------------
-     MOBILE NAVIGATION DRAWER
-     ------------------------------------------------------------------------ */
   function setMobileMenuOpen(isOpen) {
     if (!dom.menuToggle || !dom.menuDrawer) return;
     dom.menuToggle.setAttribute("aria-expanded", String(isOpen));
@@ -184,15 +178,12 @@
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 1180) {
+      if (window.innerWidth > 1200) {
         setMobileMenuOpen(false);
       }
     });
   }
 
-  /* ------------------------------------------------------------------------
-     REUSABLE HORIZONTAL CAROUSEL HELPER (ARROWS, DOTS, DRAG, WHEEL)
-     ------------------------------------------------------------------------ */
   function attachCarouselBehavior(cfg) {
     const viewport = cfg.viewport;
     const track = cfg.track;
@@ -205,7 +196,7 @@
     const getIndex = cfg.getIndex;
     const setIndex = cfg.setIndex;
 
-    if (!viewport || !track || !dotsContainer || total <= 0) return;
+    if (!viewport || !track || !dotsContainer || total <= 0) return null;
 
     dotsContainer.innerHTML = "";
     for (let i = 0; i < total; i++) {
@@ -440,7 +431,7 @@
       nextBtn: dom.nextBtn,
       total: CARBON_SUITE_MODULES.length,
       getLabel: function (i) {
-        return "Module 0" + (i + 1) + " of 06 • " + CARBON_SUITE_MODULES[i].title;
+        return "Engine 0" + (i + 1) + " of 06 • " + CARBON_SUITE_MODULES[i].title;
       },
       getIndex: function () {
         return state.activeModuleIndex;
@@ -451,9 +442,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------------
-     MODAL MANAGEMENT (CARBON™ MODULE MODAL & PRINCIPAL CONVERSATION MODAL)
-     ------------------------------------------------------------------------ */
   function hideAllModals() {
     if (dom.moduleModal) {
       dom.moduleModal.style.display = "none";
@@ -614,7 +602,7 @@
       "Venue / Group: " + (venue || "Not provided"),
       "",
       "Operational Context:",
-      notes || "Looking to connect regarding empirical hospitality operations, CARBON™ capabilities, and floor discipline.",
+      notes || "Looking to connect regarding empirical hospitality operations, C-Suite governance, and CARBON™ engines.",
       "",
       "Sent via https://rehgexec.com"
     ];

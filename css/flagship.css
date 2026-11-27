@@ -1,5 +1,5 @@
 /* ==========================================================================
-   RICKS EXECUTIVE HOSPITALITY GROUP™ — FLAGSHIP EXECUTIVE STYLESHEET (V2)
+   RICKS EXECUTIVE HOSPITALITY GROUP™ — FLAGSHIP EXECUTIVE STYLESHEET (V3)
    Crisp White (#FFFFFF) & Alabaster (#F8FAFC) Surfaces
    Rich Ink/Slate Typography (#0F172A / #334155) • 24K Sovereign Gold (#D4AF37)
    ========================================================================== */
@@ -16,10 +16,10 @@
   --gold-deep: #9E7818;
   --gold-tint: rgba(212, 175, 55, 0.14);
   --border-hairline: #E2E8F0;
-  --border-gold: rgba(212, 175, 55, 0.62);
+  --border-gold: rgba(212, 175, 55, 0.65);
   --shadow-soft: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
   --shadow-elevated: 0 22px 50px -15px rgba(15, 23, 42, 0.16);
-  --shadow-gold: 0 14px 32px -8px rgba(212, 175, 55, 0.42);
+  --shadow-gold: 0 14px 32px -8px rgba(212, 175, 55, 0.44);
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
@@ -35,7 +35,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 96px;
+  scroll-padding-top: 104px;
   font-size: 16px;
 }
 
@@ -78,25 +78,30 @@ textarea {
 }
 
 .section-band {
-  padding: 80px 0;
+  padding: 76px 0;
 }
 
 /* ==========================================================================
-   TYPOGRAPHY, EYEBROWS & DOCTRINE CALLOUT
+   TYPOGRAPHY, EYEBROWS & UNBOXED DOCTRINE
    ========================================================================== */
 .eyebrow-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
+  padding: 7px 15px;
   border-radius: 999px;
   background: var(--bg-alabaster);
   border: 1px solid var(--border-gold);
   color: var(--ink-primary);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
+  max-width: 100%;
+}
+
+.combined-holding-pill {
+  line-height: 1.35;
 }
 
 .gold-dot {
@@ -108,11 +113,11 @@ textarea {
 }
 
 .hero-title {
-  margin: 18px 0 16px;
+  margin: 14px 0 12px;
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2.4rem, 4.5vw, 3.85rem);
+  font-size: clamp(2.45rem, 4.4vw, 3.8rem);
   font-weight: 700;
-  line-height: 1.06;
+  line-height: 1.04;
   letter-spacing: -0.015em;
   color: var(--ink-primary);
 }
@@ -122,44 +127,39 @@ textarea {
 }
 
 .hero-lead {
-  margin: 0 0 22px;
-  font-size: 1.0625rem;
-  line-height: 1.72;
+  margin: 0 0 16px;
+  font-size: 1.02rem;
+  line-height: 1.66;
   color: var(--ink-secondary);
 }
 
-.doctrine-callout {
-  margin: 0 0 28px;
-  padding: 18px 22px;
-  border-radius: var(--radius-md);
-  background: var(--bg-alabaster);
-  border: 1px solid var(--border-gold);
-  border-left: 4px solid var(--gold-primary);
-  box-shadow: var(--shadow-soft);
+/* Unboxed Core Doctrine (Directly on Page Canvas — Zero Pill or Card Box) */
+.doctrine-unboxed {
+  margin: 0;
+  padding-top: 12px;
+  border-top: 2px solid var(--gold-primary);
 }
 
 .doctrine-label {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gold-deep);
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 .doctrine-text {
   margin: 0;
-  font-size: 0.925rem;
-  line-height: 1.66;
+  font-size: 0.9125rem;
+  line-height: 1.62;
   color: var(--ink-primary);
-  font-weight: 500;
 }
 
-/* Full-frame section intro spanning across the container width */
 .full-frame-header {
   width: 100%;
-  margin-bottom: 34px;
+  margin-bottom: 32px;
 }
 
 .section-title {
@@ -227,7 +227,7 @@ textarea {
 }
 
 /* ==========================================================================
-   1. EXECUTIVE COMMAND HEADER & COMMANDING GOLD CREST
+   1. EXECUTIVE COMMAND HEADER (2X STANDALONE UNFRAMED GOLD CREST)
    ========================================================================== */
 .exec-header {
   position: sticky;
@@ -244,36 +244,27 @@ textarea {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  min-height: 92px;
+  min-height: 112px;
 }
 
 .brand-lockup {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   flex-shrink: 0;
 }
 
-.brand-crest-command {
-  width: 78px;
-  height: 68px;
-  border-radius: var(--radius-md);
-  background: var(--bg-white);
-  border: 2px solid var(--gold-primary);
-  padding: 5px 7px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  flex-shrink: 0;
-  box-shadow: 0 8px 22px rgba(212, 175, 55, 0.28);
-}
-
-.brand-crest-img {
-  width: 100%;
-  height: 100%;
+/* 2x scale standalone unframed gold crest (no gold border box) */
+.brand-crest-standalone {
+  width: 124px;
+  height: 98px;
   object-fit: contain;
   object-position: center;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .brand-wordmark {
@@ -283,7 +274,7 @@ textarea {
 }
 
 .brand-name-primary {
-  font-size: 0.84rem;
+  font-size: 0.92rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   color: var(--ink-primary);
@@ -291,7 +282,7 @@ textarea {
 }
 
 .brand-name-secondary {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   color: var(--gold-deep);
@@ -395,101 +386,63 @@ textarea {
 }
 
 /* ==========================================================================
-   2. LEAD-OFF HERO & COMMANDING GOLD CREST SHOWCASE
+   2. LEAD-OFF HERO — CTA ROW EVEN WITH BOTTOM OF IMAGE
    ========================================================================== */
 .hero-section {
   background: linear-gradient(180deg, var(--bg-alabaster) 0%, var(--bg-white) 100%);
-  padding-top: 48px;
+  padding-top: 38px;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1.08fr 0.92fr;
   gap: 44px;
-  align-items: center;
+  align-items: stretch;
 }
 
-.hero-crest-showcase {
-  margin-top: 18px;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 14px 18px;
-  border-radius: var(--radius-lg);
-  background: var(--bg-white);
-  border: 2px solid var(--gold-primary);
-  box-shadow: 0 14px 34px -10px rgba(212, 175, 55, 0.34);
-}
-
-.hero-crest-plate {
-  width: 108px;
-  height: 92px;
-  padding: 6px;
-  border-radius: var(--radius-md);
-  background: var(--bg-white);
-  border: 1px solid var(--border-gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.hero-crest-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-}
-
-.hero-crest-meta {
+.hero-left-col {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-}
-
-.hero-crest-kicker {
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  color: var(--gold-deep);
-}
-
-.hero-crest-sub {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--ink-primary);
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .hero-cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+  padding-top: 4px;
 }
 
 .editorial-frame {
   margin: 0;
+  height: 100%;
   background: var(--bg-white);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-elevated);
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-photo-img {
   width: 100%;
-  height: 450px;
+  flex: 1 1 auto;
+  min-height: 410px;
+  height: 100%;
   object-fit: cover;
   object-position: center top;
 }
 
 .frame-caption {
-  padding: 16px 20px;
+  padding: 14px 20px;
   background: var(--bg-alabaster);
   border-top: 1px solid var(--border-hairline);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
+  flex-shrink: 0;
 }
 
 .caption-kicker {
@@ -500,12 +453,12 @@ textarea {
 }
 
 .caption-text {
-  font-size: 0.875rem;
+  font-size: 0.86rem;
   color: var(--ink-secondary);
 }
 
 /* ==========================================================================
-   3. COAST-TO-COAST HOSPITALITY PERSPECTIVE (PA • FL • TX • GA • CA)
+   3. FIVE BATTLEGROUNDS + SKYLINE.JPEG + 4-PILLAR C-SUITE GOVERNANCE
    ========================================================================== */
 .skyline-section {
   background: var(--bg-alabaster);
@@ -513,81 +466,15 @@ textarea {
   border-bottom: 1px solid var(--border-hairline);
 }
 
-.skyline-banner-shell {
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  border: 2px solid var(--gold-primary);
-  box-shadow: var(--shadow-elevated);
-  background: var(--ink-primary);
+.battlegrounds-lead-block {
+  margin-bottom: 28px;
 }
 
-.skyline-media-wrap {
-  position: relative;
-  min-height: 460px;
-  display: flex;
-  align-items: flex-end;
-}
-
-.skyline-photo-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.skyline-scrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    95deg,
-    rgba(15, 23, 42, 0.93) 0%,
-    rgba(15, 23, 42, 0.78) 58%,
-    rgba(15, 23, 42, 0.42) 100%
-  );
-}
-
-.skyline-overlay-content {
-  position: relative;
-  z-index: 2;
-  max-width: 780px;
-  padding: 40px;
-  color: #FFFFFF;
-}
-
-.corridor-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.88);
-  border: 1px solid var(--gold-primary);
-  color: var(--gold-bright);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-}
-
-.skyline-title {
-  margin: 14px 0 12px;
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2.05rem, 3.6vw, 2.9rem);
-  font-weight: 700;
-  line-height: 1.08;
-  color: #FFFFFF;
-}
-
-.skyline-copy {
+.battlegrounds-narrative {
   margin: 0 0 14px;
-  font-size: 0.9625rem;
-  line-height: 1.66;
-  color: #E2E8F0;
-}
-
-.skyline-copy strong {
-  color: var(--gold-bright);
+  font-size: 1rem;
+  line-height: 1.72;
+  color: var(--ink-secondary);
 }
 
 .market-chips {
@@ -600,19 +487,50 @@ textarea {
 .market-chip {
   padding: 6px 15px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(229, 193, 88, 0.72);
-  color: #FFFFFF;
+  background: var(--bg-white);
+  border: 1px solid var(--border-gold);
+  color: var(--ink-primary);
   font-size: 0.8125rem;
   font-weight: 800;
   letter-spacing: 0.12em;
+  box-shadow: var(--shadow-soft);
 }
 
-/* ==========================================================================
-   4. WHERE MARGINS ARE WON OR LOST — SCROLLABLE SHIFT CAROUSEL
-   ========================================================================== */
-.reality-section {
+.skyline-showcase-frame {
+  margin: 0;
+  width: 100%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 2px solid var(--border-gold);
   background: var(--bg-white);
+  box-shadow: var(--shadow-elevated);
+}
+
+.skyline-full-img {
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.csuite-governance-block {
+  margin-top: 44px;
+}
+
+.csuite-sub-header {
+  margin: 10px 0 22px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.65rem, 2.8vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink-primary);
+}
+
+.csuite-4-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
 }
 
 .exec-card {
@@ -627,6 +545,84 @@ textarea {
   transform: translateY(-3px);
   border-color: var(--border-gold);
   box-shadow: var(--shadow-elevated);
+}
+
+.csuite-pillar-card {
+  padding: 26px;
+  border-top: 3px solid var(--gold-primary);
+}
+
+.reality-stamp {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--gold-deep);
+  margin-bottom: 8px;
+}
+
+.card-title {
+  margin: 0 0 10px;
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--ink-primary);
+  line-height: 1.3;
+}
+
+.card-copy {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-secondary);
+  line-height: 1.65;
+}
+
+.closing-callout-bar {
+  margin-top: 28px;
+  padding: 28px 32px;
+  border-radius: var(--radius-xl);
+  background: var(--bg-white);
+  border: 2px solid var(--gold-primary);
+  box-shadow: var(--shadow-elevated);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.closing-callout-copy {
+  max-width: 760px;
+}
+
+.closing-callout-kicker {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 4px;
+}
+
+.closing-callout-title {
+  margin: 0 0 6px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.6rem, 2.7vw, 2.1rem);
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.closing-callout-desc {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.62;
+  color: var(--ink-secondary);
+}
+
+/* ==========================================================================
+   4. WHERE MARGINS ARE WON OR LOST — SCROLLABLE SHIFT CAROUSEL
+   ========================================================================== */
+.reality-section {
+  background: var(--bg-white);
 }
 
 .carousel-shell {
@@ -739,31 +735,8 @@ textarea {
   padding: 22px 24px 24px;
 }
 
-.reality-stamp {
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: var(--gold-deep);
-  margin-bottom: 8px;
-}
-
-.card-title {
-  margin: 0 0 10px;
-  font-size: 1.125rem;
-  font-weight: 800;
-  color: var(--ink-primary);
-  line-height: 1.3;
-}
-
-.card-copy {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--ink-secondary);
-  line-height: 1.62;
-}
-
 /* ==========================================================================
-   5. CARBON™ SUITE HORIZONTAL CAROUSEL (COMMANDING BADGES)
+   5. THE CARBON SUITE HORIZONTAL CAROUSEL (COMMANDING FULL-BOX BADGES)
    ========================================================================== */
 .carbon-section {
   background: var(--bg-alabaster);
@@ -777,7 +750,7 @@ textarea {
   background: var(--bg-white);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-lg);
-  padding: 18px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -792,14 +765,14 @@ textarea {
   box-shadow: var(--shadow-elevated);
 }
 
-/* Commanding full-bleed white box badge fill */
+/* Commanding full-bleed badge fill inside white container */
 .badge-command-well {
   width: 100%;
-  height: 244px;
+  height: 256px;
   border-radius: var(--radius-md);
   background: var(--bg-white);
   border: 1px solid var(--border-gold);
-  padding: 4px;
+  padding: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -812,14 +785,14 @@ textarea {
   height: 100%;
   object-fit: contain;
   object-position: center;
-  transform: scale(1.06);
+  transform: scale(1.12);
   user-select: none;
   -webkit-user-drag: none;
   transition: transform 0.2s ease;
 }
 
 .carbon-slide-card:hover .badge-command-img {
-  transform: scale(1.1);
+  transform: scale(1.16);
 }
 
 .slide-tag {
@@ -941,7 +914,7 @@ textarea {
   background: var(--bg-white);
   border: 1px solid var(--border-gold);
   border-radius: var(--radius-lg);
-  padding: 14px;
+  padding: 12px;
   box-shadow: var(--shadow-soft);
   cursor: pointer;
   transition: transform 0.16s ease, box-shadow 0.16s ease;
@@ -952,25 +925,25 @@ textarea {
   box-shadow: var(--shadow-elevated);
 }
 
-.feature-badge-well {
+.feature-badge-command-well {
   width: 100%;
-  height: 176px;
+  height: 184px;
   border-radius: var(--radius-md);
   background: var(--bg-white);
   border: 1px solid var(--border-hairline);
-  padding: 4px;
+  padding: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-.feature-badge-img {
+.feature-badge-command-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center;
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .feature-badge-meta {
@@ -993,36 +966,61 @@ textarea {
 }
 
 /* ==========================================================================
-   7. THE HUMAN NETWORK: 1-ON-1 TRAINED ADVISORS & VENDOR ALLIANCES
+   7. THE HUMAN NETWORK — EVENLY ALIGNED 3-COLUMN GRID (NO DEAD WHITE SPACE)
    ========================================================================== */
 .advisory-section {
   background: var(--bg-alabaster);
   border-top: 1px solid var(--border-hairline);
 }
 
-.advisory-layout {
+.advisory-aligned-grid {
   display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
-  gap: 32px;
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
 }
 
-.advisory-photo-img {
+.advisory-photo-panel {
+  background: var(--bg-white);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.advisory-photo-panel:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.advisory-aligned-img {
   width: 100%;
-  height: 380px;
+  flex: 1 1 auto;
+  min-height: 290px;
+  height: 100%;
   object-fit: cover;
   object-position: center top;
 }
 
-.advisory-columns {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+.advisory-photo-caption {
+  padding: 18px 20px;
+  background: var(--bg-white);
+  border-top: 1px solid var(--border-hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex-shrink: 0;
 }
 
-.advisory-column-card {
+.advisory-aligned-card {
   height: 100%;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 .column-badge {
@@ -1034,7 +1032,7 @@ textarea {
 }
 
 .column-heading {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-size: 1.15rem;
   font-weight: 800;
   color: var(--ink-primary);
@@ -1048,19 +1046,19 @@ textarea {
 }
 
 .clean-check-list {
-  margin: 0;
+  margin: auto 0 0;
   padding: 0;
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 11px;
 }
 
 .clean-check-list li {
   position: relative;
   padding-left: 18px;
-  font-size: 0.875rem;
-  line-height: 1.55;
+  font-size: 0.865rem;
+  line-height: 1.54;
   color: var(--ink-secondary);
 }
 
@@ -1080,7 +1078,7 @@ textarea {
 }
 
 .mid-cta-banner {
-  margin-top: 40px;
+  margin-top: 36px;
   padding: 28px 32px;
   background: var(--bg-white);
   border: 1px solid var(--border-gold);
@@ -1108,40 +1106,32 @@ textarea {
 }
 
 /* ==========================================================================
-   8. SOVEREIGN FOOTER
+   8. SOVEREIGN FOOTER (LIGHT-MODE PALETTE MATCHING REHGCARBON.COM STRUCTURE)
    ========================================================================== */
 .sovereign-footer {
-  background: var(--bg-white);
+  background: var(--bg-alabaster);
   border-top: 2px solid var(--gold-primary);
-  padding: 60px 0 36px;
+  padding: 56px 0 36px;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1.2fr 1fr;
+  grid-template-columns: 1.15fr 1.15fr 1fr;
   gap: 36px;
-  padding-bottom: 36px;
+  padding-bottom: 32px;
   border-bottom: 1px solid var(--border-hairline);
+  align-items: start;
 }
 
-.footer-crest-wrap {
+.footer-crest-standalone {
   width: 112px;
-  height: 90px;
-  padding: 6px 8px;
-  border-radius: var(--radius-md);
-  background: var(--bg-white);
-  border: 2px solid var(--gold-primary);
-  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.22);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-}
-
-.footer-crest-img {
-  width: 100%;
-  height: 100%;
+  height: 88px;
   object-fit: contain;
+  object-position: left center;
+  margin-bottom: 12px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
 }
 
 .footer-org-name {
@@ -1149,18 +1139,18 @@ textarea {
   font-weight: 800;
   letter-spacing: 0.1em;
   color: var(--ink-primary);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .footer-org-desc {
-  margin: 0 0 12px;
-  font-size: 0.875rem;
+  margin: 0 0 10px;
+  font-size: 0.86rem;
   color: var(--ink-secondary);
-  max-width: 340px;
+  max-width: 350px;
 }
 
 .footer-primary-link {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--gold-deep);
 }
@@ -1184,23 +1174,25 @@ textarea {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 8px;
 }
 
 .footer-link-list a {
   font-size: 0.875rem;
-  color: var(--ink-secondary);
+  font-weight: 600;
+  color: var(--gold-deep);
   transition: color 0.15s ease;
 }
 
 .footer-link-list a:hover {
-  color: var(--gold-deep);
+  color: var(--ink-primary);
+  text-decoration: underline;
 }
 
 .footer-contact-stack {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 8px;
 }
 
 .contact-person {
@@ -1225,7 +1217,7 @@ textarea {
 }
 
 .footer-bottom-bar {
-  padding-top: 22px;
+  padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -1335,7 +1327,7 @@ textarea {
   background: var(--bg-white);
   border: 1px solid var(--border-gold);
   border-radius: var(--radius-lg);
-  padding: 12px;
+  padding: 10px;
   min-height: 290px;
   display: flex;
   align-items: center;
@@ -1348,7 +1340,7 @@ textarea {
   max-height: 280px;
   object-fit: contain;
   object-position: center;
-  transform: scale(1.04);
+  transform: scale(1.08);
 }
 
 .module-subtitle {
@@ -1533,7 +1525,7 @@ textarea {
 /* ==========================================================================
    RESPONSIVE BREAKPOINTS
    ========================================================================== */
-@media (max-width: 1180px) {
+@media (max-width: 1200px) {
   .primary-nav {
     display: none;
   }
@@ -1543,12 +1535,20 @@ textarea {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1040px) {
   .hero-grid,
   .footprint-feature-grid,
-  .advisory-layout {
+  .advisory-aligned-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
+  }
+
+  .hero-photo-img {
+    min-height: 340px;
+  }
+
+  .advisory-aligned-img {
+    min-height: 260px;
   }
 
   .essay-slide-card {
@@ -1565,7 +1565,7 @@ textarea {
 }
 
 @media (max-width: 780px) {
-  .advisory-columns,
+  .csuite-4-grid,
   .module-modal-body {
     grid-template-columns: 1fr;
   }
@@ -1577,21 +1577,21 @@ textarea {
 
 @media (max-width: 640px) {
   .section-band {
-    padding: 64px 0;
+    padding: 60px 0;
   }
 
   .header-inner {
-    min-height: 80px;
+    min-height: 92px;
     gap: 10px;
   }
 
-  .brand-crest-command {
-    width: 62px;
-    height: 54px;
+  .brand-crest-standalone {
+    width: 88px;
+    height: 70px;
   }
 
   .brand-name-primary {
-    font-size: 0.72rem;
+    font-size: 0.74rem;
     letter-spacing: 0.11em;
   }
 
@@ -1604,21 +1604,9 @@ textarea {
     display: none;
   }
 
-  .hero-crest-showcase {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footprint-feature-panel {
+  .footprint-feature-panel,
+  .closing-callout-bar {
     padding: 22px;
-  }
-
-  .skyline-media-wrap {
-    min-height: 440px;
-  }
-
-  .skyline-overlay-content {
-    padding: 28px 22px;
   }
 
   .essay-slide-card,
